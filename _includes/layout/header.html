@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>
+        {% if page.url == "/" %}
+            {{ page.title }}
+        {% else %}
+            {{ page.title }} - {{ site.name }}
+        {% endif %}
+    </title>
+    {% if page.meta_description %}
+    <meta name="description" content="{{ page.meta_description }}" />
+    {% endif %}
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
+    <link href="https://fonts.googleapis.com/css?family=Asap:400,600,600i|Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
+</head>
+<body{% if page.section %} class="section section--{{ page.section }}"{% endif %}>
+    <header class="header">
+        <div class="wrapper">
+            <h1 class="header__title">
+                {% include logo.html element="a" style="light" %}
+            </h1>
+            <span class="menu-button"><span class="icon">{% include icon.html icon='bars' %}</span></span>
+            <span class="menu-close-button menu-close-button--hide"><span class="icon">{% include icon.html icon='times-circle' %}</span></span>
+            <nav class="main-menu main-menu--mobile-hide">
+                <ul class="main-menu__links">
+                    <li class="main-menu__links__gap">&nbsp;</li>
+                    <li class="main-menu__links__item main-menu__links__item--home{% if page.section == "home" or layout.section == "home" %} main-menu__links__item--active{% endif %}">
+                        <a href="{{ site.baseurl }}/" class="main-menu__links__item__link">Home</a>
+                    </li>
+                    <li class="main-menu__links__item main-menu__links__item--download{% if page.section == "download" or layout.section == "download" %} main-menu__links__item--active{% endif %}">
+                        <a href="{{ site.baseurl }}/download/" class="main-menu__links__item__link">Download</a>
+                    </li>
+                    <li class="main-menu__links__item main-menu__links__item--community">
+                        <a href="https://community.mybb.com/" class="main-menu__links__item__link">Community</a>
+                    </li>
+                    <li class="main-menu__links__item main-menu__links__item--extend">
+                        <a href="https://community.mybb.com/mods.php" class="main-menu__links__item__link">Extend</a>
+                    </li>
+                    <li class="main-menu__links__item main-menu__links__item--docs">
+                        <a href="https://docs.mybb.com/" class="main-menu__links__item__link">Docs</a>
+                    </li>
+                    <li class="main-menu__links__item main-menu__links__item--blog">
+                        <a href="https://blog.mybb.com/" class="main-menu__links__item__link">Blog</a>
+                    </li>
+                    <li class="main-menu__links__item main-menu__links__item--search">
+                        <span class="main-menu__links__item__icon main-menu__links__item--search__icon">{% include icon.html icon='search' %}</span>
+                    </li>
+                </ul>
+            </nav>
+            <div class="site-search site-search--mobile-hide">
+                <form method="get" action="https://www.google.com/search">
+					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="mybb.com">
+					<label for="qWidget">
+						<input name="q" id="qWidget" type="text" class="site-search__field" placeholder="Search MyBB.com" />
+					</label>
+                    <button class="button site-search__button site-search__button--search" id="submit" type="submit">{% include icon.html icon='search' %} Search</button>
+                    <span class="button button--dark site-search__button site-search__button--cancel">{% include icon.html icon='times' %} Cancel</span>
+				</form>
+            </div>
+        </div>
+    </header>

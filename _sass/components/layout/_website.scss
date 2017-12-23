@@ -1,0 +1,140 @@
+html, button, input, select, textarea {
+    color: $font-color;
+    word-wrap: break-word;
+}
+
+::selection {
+    background: $secondary-color;
+    color: $invert-font-color;
+    text-shadow: none;
+}
+
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+    font: 16px/26px $font-stack;
+    background: $background-default;
+}
+
+input, select, textarea, button {
+    font: 16px $font-stack;
+}
+
+a:link,
+a:visited {
+    color: $primary-color;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    color: $secondary-color;
+    text-decoration: underline;
+}
+
+a:focus,
+button:focus {
+    outline: 0;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+img {
+    vertical-align: middle;
+
+    &.avatar {
+        border-radius: 4px;
+    }
+}
+
+fieldset {
+    border: 0;
+    margin: 0;
+    padding: 0;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.wrapper {
+    @include clearfix();
+    width: 88%;
+    margin: 0 6%;
+    box-sizing: border-box;
+
+    @include bp-large {
+        max-width: 1250px;
+        margin: 0 auto;
+    }
+}
+
+.main {
+    padding: 20px 0 30px 0;
+
+    .wrapper {
+    	padding: 0;
+    }
+
+    @include bp-medium {
+
+        .page-content--sidebar {
+            float: $left;
+            width: 62%;
+        }
+
+        .page-content--centered {
+            width: 60%;
+            float: none;
+            margin: auto auto;
+        }
+
+        .page-content--menu {
+            float: $left;
+            width: 78%;
+        }
+
+        .page-sidebar {
+            float: $right;
+            width: 35%;
+            margin-top: 0;
+        }
+    }
+
+    .page-sidebar {
+        padding-bottom: 10px;
+        font-size: 0.9em;
+
+        .block {
+            // border: 1px solid $border-3;
+            background: $background-1;
+            padding: 15px 20px;
+            margin-bottom: 30px;
+            border-radius: 4px;
+
+            .block__heading {
+                border-bottom: none;
+                padding-bottom: 0;
+                font-size: 1.4em;
+                color: $font-color;
+    			margin: 0 0 0.5em 0;
+                font-family: $alt-font-stack;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.js .main {
+    padding-top: 100px;
+}

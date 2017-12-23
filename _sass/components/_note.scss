@@ -1,0 +1,21 @@
+@mixin note($background-color) {
+    margin: 10px 0 20px 0;
+    padding: 10px 30px 10px 50px;
+    background-color: $background-color;
+    color: $alt-font-color-1;
+    border-radius: $radius;
+    border-left: 4px solid $border-1;
+
+    @include icon(24px, $alt-font-color-2, 12px, -36px) {
+        float: left;
+        margin-top: 16px;
+    }
+
+    &__buttons {
+        margin: 0 -5px;
+
+        .button.button--big .icon svg {
+            margin-top: 0;
+        }
+    }
+}

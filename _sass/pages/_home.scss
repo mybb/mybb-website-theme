@@ -1,0 +1,178 @@
+.main--home {
+	padding-bottom: 0;
+
+	.main-feature {
+
+		.wrapper {
+			padding: 20px 0 50px 0;
+			margin-bottom: 0;
+			border-bottom: none;
+			position: relative;
+		}
+
+		&__description {
+			font-size: 1.6em;
+		}
+
+		&__buttons {
+			margin: 30px 0 0 -5px;
+		}
+
+		&__screenshots {
+			display: none; // hide carousel when js is disabled
+			margin: 0px -5px 30px -5px;
+			position: relative;
+
+			@include bp-medium-max {
+				margin-bottom: 60px;
+			}
+
+			&__carousel {
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+			}
+
+			&__item {
+				padding: 5px;
+				box-sizing: border-box;
+
+				&__image {
+					background: $background-2;
+					border-radius: $radius;
+					padding: 8px;
+					box-sizing: border-box;
+					width: 300px;
+				}
+			}
+
+			&__nav {
+				@include icon(30px, $alt-font-color-3, 0, 0) {
+					position: absolute;
+					top: 0;
+					bottom: 0;
+					left:0;
+					right:0;
+					margin: auto;
+				};
+				cursor: pointer;
+				position: absolute;
+				top: 0;
+				bottom: 0;
+				margin: auto;
+
+				@include bp-medium-max {
+					top: auto;
+					bottom: -25px;
+					margin: 0;
+				}
+
+				&:hover,
+				&:active {
+					@include icon-fill($alt-font-color-2);
+				}
+
+				&--previous {
+					left: -30px;
+
+					@include bp-medium-max {
+						left: 0;
+					}
+				}
+
+				&--next {
+					right: 0px;
+
+					@include bp-medium-max {
+						right: 30px;
+					}
+				}
+
+			}
+		}
+	}
+
+	@include bp-medium-max {
+
+		.button {
+			display: block;
+			text-align: center;
+			margin: 0 0 20px 0;
+		}
+	}
+}
+
+.js .main--home .main-feature__screenshots {
+	display: block;
+}
+
+.home-block {
+
+	.wrapper {
+		padding: 50px 0;
+	}
+
+	&__title {
+		font-weight: normal;
+		margin: 0 0 10px 0;
+		font-family: $alt-font-stack;
+		font-size: 1.8em;
+		color: $alt-font-color-4;
+	}
+
+	&__subtitle {
+		font-weight: normal;
+		font-size: 1em;
+		color: $alt-font-color-2;
+		margin: 0 0 30px 0;
+	}
+
+	&__buttons {
+		margin: 0 0 0 -5px;
+	}
+
+	&--why {
+		background: $background-2;
+
+		.wrapper {
+			padding-bottom: 20px;
+		}
+	}
+
+	&--get-involved {
+
+		.wrapper {
+			border-bottom: 1px dashed $border-2;
+		}
+
+		&__subtitle {
+			margin: 0 0 10px 0;
+		}
+	}
+
+	&--download {
+		background: $primary-color;
+
+		.home-block__title {
+			color: $invert-font-color;
+		}
+
+		.home-block__subtitle {
+			@include white-transparency(0.7);
+
+			&__link {
+				@include links {
+					color: $invert-font-color;
+					font-weight: bold;
+				}
+			}
+		}
+	}
+
+	&--search {
+
+		.wrapper {
+			padding: 0 0 40px 0;
+		}
+	}
+}

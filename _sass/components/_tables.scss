@@ -1,0 +1,36 @@
+table.standard-table {
+	border-collapse: collapse;
+	margin-top: 0.5em;
+	width: 100%;
+	font-size: 0.9em;
+
+	thead {
+		background: $background-2;
+		border-top: 1px solid $border-2;
+		color: $alt-font-color-1;
+
+		th {
+			font-weight: normal;
+			letter-spacing: 1px;
+			font-size: 1em;
+			text-align: $left;
+		}
+	}
+
+	th {
+		border-bottom: 1px solid $border-2;
+
+		&.team-lead {
+			color: $secondary-color;
+		}
+	}
+
+	th, td {
+		padding: 0.4em 0.8em;
+	}
+
+	th.standard-table__row, td {
+		border-bottom: 1px solid $border-3;
+		text-align: $left;
+	}
+}

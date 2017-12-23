@@ -1,0 +1,284 @@
+.header {
+    background: $dark-background-1;
+
+    @include bp-medium {
+        display: flex;
+        flex-direction: row;
+        height: $header-height;
+    }
+
+    &__title {
+        height: 100%;
+        margin: 0;
+
+        @include bp-medium {
+            float: $left;
+        }
+
+        .logo {
+            height: $header-height;
+            align-items: center;
+            display: flex;
+
+            @include bp-medium {
+                height: 100%;
+            }
+        }
+    }
+
+    .wrapper {
+        position: relative;
+    }
+
+    .menu-button,
+    .menu-close-button {
+        display: none;
+    }
+}
+
+.main-menu {
+    height: 100%;
+
+    &__links {
+        height: 100%;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        font-size: 0;
+        display: flex;
+
+        @include bp-medium-max {
+            flex-wrap: wrap;
+            background: $dark-background-2;
+            margin: 0 -6%;
+            border-bottom: 1px solid $dark-border-3;
+        }
+
+        &__gap {
+            flex-grow: 2;
+
+            @include bp-medium-max {
+                display: none;
+            }
+        }
+
+        &__item {
+            $module: &;
+            flex-grow: 1;
+            transition: background $transition-speed ease;
+
+            @include bp-medium-max {
+                width: 100%;
+                box-sizing: border-box;
+                text-align: left;
+                border-top: 1px solid $dark-border-3;
+            }
+
+            &__link {
+                display: block;
+                margin: 0;
+                font-size: $font-regular;
+                height: 100%;
+                font-weight: 300;
+                box-sizing: border-box;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                @include bp-medium-max {
+                    text-align: left;
+                    padding: 8px 20px;
+                    font-size: $font-small;
+                    justify-content: flex-start;
+                }
+
+                &:link, &:visited {
+                    color: $invert-font-color;
+                    text-decoration: none;
+                }
+
+                &:hover,
+                &:active {
+                    background: rgba($dark-background-3, 0.6);
+                }
+            }
+
+            &--search {
+                flex-grow: 0;
+                padding: 0 0 0 10px;
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                display: none;
+
+                &__icon {
+
+                    @include icon(20px, $alt-font-color-2, 0, 0);
+
+                    &:hover,
+                    &:active {
+                        @include icon-fill($alt-font-color-3);
+                        cursor: pointer;
+                    }
+                }
+            }
+
+            &--active {
+                background: $primary-color;
+                color: $invert-font-color;
+
+                #{$module}__link {
+                    color: inherit;
+                }
+
+                .main-menu__links__item__link {
+
+                    &:hover,
+                    &:active {
+                        background: $primary-color;
+                    }
+                }
+            }
+        }
+
+    }
+}
+
+.site-search {
+    background: $dark-background-1;
+
+    @include bp-medium {
+        text-align: right;
+        padding: 15px 0 14px 0;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 77%;
+        will-change: transform;
+        transition: transform 200ms linear;
+        transform: translateY(-100%);
+
+        &--show {
+            transform: translateY(0%);
+        }
+
+        input[type="text"].site-search__field {
+            margin: 1px 5px 1px 0;
+            width: 250px;
+            padding: 7px 7px 8px 7px;
+            border-color: $background-default;
+        }
+
+        &__button--cancel.button {
+            margin-right: 0;
+            display: inline-block;
+        }
+    }
+
+    @include bp-medium-max {
+        margin: 10px -10px 0 -10px;
+
+        input[type="text"].site-search__field {
+            width: 63%;
+            display: inline-block;
+            padding: 7px 7px 8px 7px;
+            margin: 0 0 10px 0;
+            border-color: $background-default;
+            box-sizing: border-box;
+            float: left;
+        }
+
+        &__button--search.button {
+            width: 35%;
+            margin: 0 0 10px 0;
+            box-sizing: border-box;
+            float: right;
+        }
+
+        &__button--cancel.button {
+            display: none;
+        }
+    }
+}
+
+
+.js {
+
+    .header {
+        position: fixed;
+        z-index: 10;
+        right: 0;
+        left: 0;
+        top: 0;
+
+        .menu-button,
+        .menu-close-button {
+            display: block;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 24px 15px;
+            cursor: pointer;
+            @include icon(30px, $invert-font-color);
+
+            &--hide {
+                display: none;
+            }
+
+            @include bp-medium {
+                display: none;
+            }
+        }
+    }
+
+    .main-menu {
+
+        @include bp-medium-max {
+
+            &.main-menu--mobile-hide {
+                display: none;
+            }
+
+            &.main-menu--mobile-show {
+                display: block;
+            }
+        }
+
+        &__links__item--search {
+
+            @include bp-medium {
+                display: flex;
+            }
+        }
+    }
+
+    .site-search {
+
+        @include bp-medium-max {
+
+            &--mobile-hide {
+                display: none;
+            }
+
+            &--mobile-show {
+                display: block;
+            }
+        }
+    }
+}
+
+.headroom {
+    will-change: transform;
+    transition: transform 200ms linear;
+}
+.headroom--pinned {
+    transform: translateY(0%);
+}
+.headroom--unpinned {
+    transform: translateY(-100%);
+
+    &.headroom--disabled {
+        transform: translateY(0%);
+    }
+}

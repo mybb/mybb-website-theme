@@ -1,0 +1,146 @@
+.form {
+    border: 1px solid $border-1;
+    margin-bottom: 10px;
+    border-radius: 4px;
+
+    .heading--major {
+        margin: -1px;
+        border-radius: corner-values(4px 4px 0 0);
+    }
+
+    &__section {
+        @include clearfix();
+        padding: 16px 12px;
+        border-bottom: 2px solid $border-1;
+
+        &__title {
+            margin: side-values(0 0 12px 0);
+            padding: side-values(0 8px 8px 8px);
+            color: $primary-color;
+            font-size: 1.1em;
+            border-bottom: 1px dotted $border-2;
+
+            @include bp-medium {
+                border: 0;
+                float: $left;
+                margin: 0;
+                padding: 0;
+                width: 20%;
+                text-align: $right;
+            }
+        }
+
+        &:last-child {
+            border-bottom: 0;
+        }
+
+        @include bp-medium {
+            padding: 20px 12px;
+        }
+
+        &__container {
+
+            @include bp-medium {
+                float: $left;
+                margin: side-values(0 0 0 3%);
+                padding: side-values(0 0 0 20px);
+                border-#{$left}: 1px dotted $border-2;
+                width: 74%;
+                box-sizing: border-box;
+            }
+        }
+    }
+
+    &__row {
+        border-bottom: 1px solid $border-1;
+        padding: 12px 8px;
+
+        &__title {
+            margin: side-values(0 0 5px 0);
+            padding: 0;
+            font-size: 1em;
+            font-weight: bold;
+        }
+
+        &__description {
+            font-size: 0.8em;
+            line-height: 1.4;
+            color: $alt-font-color-1;
+            margin: side-values(-4px 0 4px 0);
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 6px;
+        }
+    }
+
+    &__checkbox {
+        font-size: 0.9em;
+        margin: 5px 0;
+        padding: side-values(0 0 0 30px);
+
+        input[type="checkbox"] {
+            float: $left;
+            margin: side-values(6px 0 0 -26px);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__radio {
+        padding: side-values(0 0 0 30px);
+        margin-bottom: 20px;
+
+        input[type="radio"] {
+            float: $left;
+            margin: side-values(6px 0 0 -26px);
+        }
+
+        &__title {
+            font-size: 1em;
+            margin: side-values(10px 0 5px 0);
+        }
+
+        &__description {
+            @extend .form__row__description;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    &__data {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    .topic-title {
+        font-size: 1.3em;
+    }
+
+    .buttons {
+        margin: -5px;
+    }
+
+    &__submit {
+        text-align: center;
+        padding: 10px 0 0 0;
+
+        .button {
+            font-size: 1em;
+            padding: 6px 12px;
+        }
+    }
+}

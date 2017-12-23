@@ -1,0 +1,137 @@
+@mixin bp-custom($width) {
+    @media only screen and (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin bp-custom-max($width) {
+    @media only screen and (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin icon($size, $color, $margin-right: 0, $margin-left: 0) {
+
+    .icon svg {
+        width: $size;
+        height: $size;
+        vertical-align: middle;
+        margin-top: -2px;
+        margin-#{$left}: $margin-left;
+        margin-#{$right}: $margin-right;
+        @content;
+
+        * {
+            fill: $color !important;
+        }
+    }
+}
+
+@mixin icon-size($size) {
+
+    .icon svg {
+        width: $size;
+        height: $size;
+    }
+}
+
+@mixin icon-fill($color) {
+
+    .icon svg * {
+        fill: $color !important;
+    }
+}
+
+@mixin links() {
+
+    &:link,
+    &:visited,
+    &:hover,
+    &:active {
+        @content;
+    }
+}
+
+@mixin menu-color($color) {
+    border-color: $color;
+
+    &.main-menu__links__item--active {
+        background: $color;
+        background: rgba($color, 0.7);
+    }
+}
+
+@mixin bp-large {
+    @media only screen and (min-width: $bp-large) {
+        @content;
+    }
+}
+
+@mixin bp-large-max {
+    @media only screen and (max-width: $bp-large) {
+        @content;
+    }
+}
+
+@mixin bp-medium {
+    @media only screen and (min-width: $bp-medium) {
+        @content;
+    }
+}
+
+@mixin bp-medium-max {
+    @media only screen and (max-width: $bp-medium - 1) {
+        @content;
+    }
+}
+
+@mixin bp-small {
+    @media only screen and (min-width: $bp-small - 1) {
+        @content;
+    }
+}
+
+@mixin bp-small-max {
+    @media only screen and (max-width: $bp-small - 1) {
+        @content;
+    }
+}
+
+@mixin black-transparency($transparency, $attr: color) {
+    #{$attr}: rgba(0,0,0,$transparency);
+}
+
+@mixin white-transparency($transparency, $attr: color) {
+    #{$attr}: rgba(255,255,255,$transparency);
+}
+
+@mixin transform($transform) {
+    -webkit-transform: $transform;
+    -moz-transform: $transform;
+    -ms-transform: $transform;
+    -o-transform: $transform;
+}
+
+@mixin clearfix {
+    &:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin hidden {
+    display: none !important;
+    visibility: hidden;
+}
+
+@mixin visually-hidden {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}

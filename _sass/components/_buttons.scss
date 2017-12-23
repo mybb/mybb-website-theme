@@ -1,0 +1,154 @@
+.button,
+a.button {
+    color: $invert-font-color;
+    background: $primary-color;
+    border: 1px solid $primary-color;
+    padding: 4px 10px;
+    margin: 5px;
+    font-size: 0.9em;
+    text-decoration: none;
+    display: inline-block;
+    line-height: 26px;
+    border-radius: 4px;
+
+    &:link,
+    &:visited {
+        color: $invert-font-color;
+    }
+
+    &:hover,
+    &:active {
+        background: $secondary-color;
+        border-color: $secondary-color;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    &.button--secondary {
+        border: 1px solid $border-1;
+        background: $background-default;
+        color: $primary-color;
+
+        &:link,
+        &:visited {
+            color: $primary-color;
+        }
+
+        &:hover,
+        &:active {
+            color: $secondary-color;
+        }
+    }
+
+    &.button--primary-border {
+        border-color: $primary-color;
+    }
+
+    &.button--default-background-border {
+        border-color: $background-default;
+        box-shadow: $border-1 0 0 3px;
+    }
+
+    &.button--invert {
+        background: $secondary-color;
+        border-color: $secondary-color;
+
+        &:hover,
+        &:active {
+            background-color: $secondary-color-dark;
+            border-color: $secondary-color-dark;
+        }
+    }
+
+    @include bp-medium-max {
+
+        &.button--full-width {
+            padding: 8px 10px;
+            width: 100%;
+            margin: 5px 0;
+            box-sizing: border-box;
+        }
+
+        &.button--half-width {
+            padding: 8px 10px;
+            width: 49%;
+            float: $left;
+            box-sizing: border-box;
+
+            &:nth-child(odd) {
+                margin-#{$left}: 0;
+                margin-#{$right}: 1%;
+            }
+
+            &:nth-child(even) {
+                margin-#{$left}: 1%;
+                margin-#{$right}: 0;
+            }
+        }
+    }
+
+    &.button--danger {
+        background: none;
+        color: $danger-color;
+        border-color: $border-1;
+
+        &:hover {
+            background: $danger-color;
+            border-color: $danger-color;
+            color: $invert-font-color;
+        }
+    }
+
+    &.button--success {
+        background: none;
+        color: $success-color;
+        border-color: $border-1;
+
+        &:hover {
+            background: $success-color;
+            border-color: $success-color;
+            color: $invert-font-color;
+        }
+    }
+
+    @include icon(16px, $invert-font-color, 6px);
+
+	&.button--secondary {
+		@include icon-fill($primary-color);
+
+		&:hover, &:active {
+			@include icon-fill($secondary-color);
+		}
+	}
+
+	&.button--medium {
+		font-size: 1.2em;
+		padding: 8px 16px;
+
+        @include icon-size(24px);
+	}
+
+	&.button--big {
+		font-size: 1.3em;
+		padding: 12px 18px;
+
+        @include icon-size(24px);
+	}
+
+	&.button--dark {
+		background: $dark-background-1;
+		border-color: $dark-border-3;
+
+		&:hover {
+			border-color: $dark-border-2;
+		}
+	}
+
+    &.button--no-margin {
+        margin: 0;
+    }
+
+    &:hover, &:active {
+        outline: none;
+    }
+}

@@ -1,0 +1,297 @@
+.release-notes {
+
+    &__title {
+        margin-bottom: 6px;
+        font-family: $alt-font-stack;
+
+        &__package {
+            font-size: $font-largest;
+            font-weight: bold;
+            margin: 30px 20px 12px 0;
+            display: inline-block;
+        }
+
+        &__time {
+            font-size: $font-large;
+            color: $alt-font-color-2;
+            display: inline-block;
+            margin: 0;
+        }
+    }
+
+    &__details {
+        padding-bottom: 40px;
+        border-bottom: 1px solid $border-1;
+
+        &__code {
+            color: $alt-font-color-1;
+            display: inline-block;
+            margin: 0 15px 0 0;
+        }
+
+        &__types {
+            display: inline-block;
+            margin: 0;
+
+            &__item {
+                display: inline-block;
+                margin: 0 8px 0 0;
+                padding: 2px 10px;
+                font-size: 13px;
+                background: $background-2;
+                border-radius: $radius;
+                text-transform: uppercase;
+                color: $alt-font-color-1;
+            }
+        }
+
+        & div:first-of-type {
+            margin-top: 40px;
+        }
+
+        & div:last-of-type {
+            margin-bottom: 0px;
+        }
+    }
+
+    &__note {
+        @include note($background-2);
+    }
+
+}
+
+.download-packages {
+    display: flex;
+    justify-content: space-between;
+    margin: 40px -10px 0 -10px;
+    flex-direction: column;
+
+    @include bp-medium {
+        flex-direction: row;
+    }
+
+    &__package {
+        flex: 1;
+        padding: 10px;
+        min-width: 0;
+        word-wrap: break-word;
+        position: relative;
+
+        &__title {
+            @include icon(24px, $alt-font-color-2, 8px, 0);
+            font-family: $alt-font-stack;
+            font-size: $font-larger;
+            margin: 0;
+            font-weight: bold;
+        }
+
+        &__description {
+            font-size: $font-smallest;
+            color: $alt-font-color-1;
+        }
+    }
+
+    &__format {
+
+        &__details {
+            float: right;
+            position: absolute;
+            top: 0;
+            right: 20px;
+            font-size: $font-smallest;
+            color: $alt-font-color-2;
+        }
+    }
+
+    &__location {
+        $module: &;
+
+        &.button {
+            display: block;
+            margin: 0 0 10px 0;
+            border-width: 2px;
+            padding: 10px 15px;
+            font-size: $font-regular;
+        }
+
+        &--mybb.button {
+            background-color: $primary-color;
+            border-color: $primary-color;
+        }
+
+        &--changed_files.button {
+            background-color: $dark-background-4;
+            border-color: $dark-background-4;
+        }
+
+        &--github.button {
+
+            &.download-packages__location--mybb.button {
+
+                &:link,
+                &:visited {
+                    color: $primary-color;
+                    background-color: $background-default;
+
+                    @include icon-fill($primary-color);
+                }
+
+                &:hover,
+                &:active {
+                    color: $secondary-color;
+
+                    @include icon-fill($secondary-color);
+                }
+            }
+
+            &.download-packages__location--changed_files.button {
+
+                &:link,
+                &:visited {
+                    color: $dark-background-4;
+                    background-color: $background-default;
+
+                    @include icon-fill($dark-background-4);
+                }
+
+                &:hover,
+                &:active {
+                    color: $secondary-color;
+
+                    @include icon-fill($secondary-color);
+                }
+            }
+        }
+    }
+
+    &__checksums {
+        margin-top: 20px;
+
+        &__type {
+            margin: 0;
+            font-size: $font-smallest;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        &__value {
+            padding: 4px 8px;
+            background: $background-1;
+            border-radius: $radius;
+            font-family: monospace;
+            font-size: $font-smallest;
+        }
+    }
+
+    &__verifying-note {
+        margin-bottom: 30px;
+        text-align: center;
+
+        &__link {
+            font-size: $font-smallest;
+
+            @include icon(16px, $alt-font-color-2, 4px, 0);
+        }
+    }
+}
+
+.package-notes {
+    background: $background-2;
+    padding: 20px 0;
+    margin-top: -1px;
+
+    &__title {
+        font-family: $alt-font-stack;
+        font-size: $font-larger;
+    }
+
+    &__note {
+        @include note($background-default);
+
+        &--important {
+            border-color: $danger-color;
+            @include icon-fill($danger-color);
+        }
+
+        &--comment {
+            background: none;
+            border-color: transparent;
+            font-size: $font-large;
+            font-style: italic;
+        }
+    }
+}
+
+.release-details {
+
+    &__block {
+        padding: 40px 0;
+        border-bottom: 1px dashed $border-2;
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        &__title {
+            color: $font-color;
+    		font-weight: 600;
+            font-size: $font-larger;
+            font-family: $alt-font-stack;
+            margin: 0 0 20px 0;
+        }
+    }
+}
+
+.security-issues {
+
+    &__issue {
+        padding: 12px 0;
+        border-bottom: 1px solid $border-3;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &__severity {
+            display: inline-block;
+            margin: 0 8px 0 0;
+            padding: 2px 10px;
+            font-size: 13px;
+            background: $background-2;
+            border-radius: $radius;
+            text-transform: uppercase;
+            color: $alt-font-color-1;
+            float: right;
+        }
+
+        &__description {
+            margin: 0;
+            font-size: $font-regular;
+            font-weight: normal;
+        }
+
+        &__reporter {
+            margin: 0;
+            font-size: $font-smallest;
+            color: $alt-font-color-2;
+
+            a {
+                @include links {
+                    color: $alt-font-color-1;
+                }
+            }
+
+            &__affiliation {
+
+                &:before {
+                    content: "(";
+                }
+
+                &:after {
+                    content: ")";
+                }
+            }
+        }
+    }
+}

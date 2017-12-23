@@ -1,0 +1,89 @@
+.footer {
+    background: $dark-background-1;
+
+    .wrapper {
+        padding: 20px 0;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+
+        @include bp-medium {
+            padding: 0;
+            flex-direction: row;
+        }
+    }
+
+    &__nav {
+        flex-grow: 1;
+
+        &__links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+
+            &__item {
+                font-size: 0.8em;
+                padding: 0;
+
+                @include bp-medium {
+                    font-size: 0.7em;
+                    display: inline-block;
+                }
+
+                @include bp-large {
+                    font-size: 0.8em;
+                }
+
+                &__link {
+                    display: block;
+                    padding: 6px 12px;
+                    transition: background $transition-speed ease, color $transition-speed ease;
+
+                    @include bp-medium {
+                        padding: 14px 6px;
+                    }
+
+                    @include bp-large {
+                        padding: 18px 12px;
+                    }
+
+                    @include links {
+                        color: $alt-font-color-3;
+                        text-decoration: none;
+                    }
+
+                    &:hover,
+                    &:active {
+                        color: $invert-font-color;
+                        background: rgba($dark-background-3, 0.6);
+                    }
+
+                    @include icon(16px, $alt-font-color-2, auto, auto) {
+                        margin-right: 2px;
+                    }
+                }
+            }
+        }
+
+        &--internal {
+            text-transform: uppercase;
+        }
+
+        &--social {
+
+            @include bp-medium {
+                text-align: right;
+            }
+        }
+    }
+}
+
+.copyright {
+    display: none;
+    background: $dark-background-2;
+    font-size: 0.75em;
+    color: $alt-font-color-2;
+    margin: 0;
+    text-align: center;
+    padding: 10px 0;
+}

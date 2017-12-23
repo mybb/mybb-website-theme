@@ -1,0 +1,101 @@
+.section-menu {
+
+    @include bp-medium {
+        float: $left;
+        width: 19%;
+        margin-#{$right}: 3%;
+    }
+
+    &__links {
+        @include clearfix();
+        margin: side-values(0 0 15px 0);
+        padding: 0;
+        list-style: none;
+
+        &__item {
+            float: $left;
+            width: 48%;
+            margin-bottom: 4px;
+
+            &:nth-child(odd) {
+                margin-#{$right}: 2%;
+            }
+
+            &:nth-child(even) {
+                margin-#{$left}: 2%;
+            }
+
+            &__link {
+                background: $background-1;
+                display: block;
+                padding: 2px 8px;
+                border-radius: 3px;
+
+                &:link,
+                &:visited {
+                    text-decoration: none;
+                }
+
+                &:hover,
+                &:active {
+                    background-color: $secondary-color;
+                    border-color: $secondary-color;
+                    color: $invert-font-color;
+                }
+            }
+
+            &.section-menu__links__item--active {
+
+                .section-menu__links__item__link {
+                    background-color: $primary-color;
+                    border-color: $primary-color;
+                    color: $invert-font-color;
+                }
+            }
+        }
+
+        @include bp-medium {
+            margin: 0;
+
+            .section-menu__links__item {
+
+                &,
+                &:nth-child(odd),
+                &:nth-child(even) {
+                    float: none;
+                    width: 100%;
+                    margin-#{$left}: 0;
+                    margin-#{$right}: 0;
+                }
+            }
+        }
+    }
+
+ 	&.section-menu--block {
+ 		float: none;
+ 		width: auto;
+ 		margin: 0 0 20px 0;
+ 		font-size: 1.1em;
+ 	}
+
+ 	&__links {
+
+ 		&__item {
+
+ 			&,
+ 			&:nth-child(odd),
+ 			&:nth-child(even) {
+ 				float: none;
+ 				width: 100%;
+ 				margin-#{$left}: 0;
+ 				margin-#{$right}: 0;
+ 			}
+
+ 			@include icon(18px, $primary-color, 8px, 2px);
+
+ 			&:hover, &:active, &.section-menu__links__item--active {
+ 				@include icon-fill($invert-font-color);
+ 			}
+ 		}
+ 	}
+ }

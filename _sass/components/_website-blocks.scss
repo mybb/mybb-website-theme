@@ -1,0 +1,88 @@
+.block {
+	margin-bottom: 40px;
+
+	&--markdown,
+	&--basic {
+
+		h1 {
+			color: $font-color;
+			font-weight: 600;
+			margin: 2em 0 0.5em 0;
+			font-size: 1.5em;
+			font-family: $alt-font-stack;
+
+			&:first-child {
+				margin-top: 0;
+			}
+		}
+
+		h2 {
+			color: $alt-font-color-4;
+			font-size: 1.2em;
+			font-family: $alt-font-stack;
+			font-weight: 600;
+			margin: 0.5em 0 0.5em 0;
+		}
+
+		h3 {
+			color: $alt-font-color-1;
+			font-size: 1em;
+			font-family: $alt-font-stack;
+			font-weight: 600;
+		}
+	}
+
+	// p {
+	// 	margin: 0 0 20px 0;
+    //
+	// 	&:last-child {
+	// 		margin: 0;
+	// 	}
+	// }
+
+	&__heading {
+		margin-bottom: 10px;
+
+		&__title {
+			color: $font-color;
+			font-weight: 600;
+			margin-bottom: 2px;
+			padding: 0;
+			margin: 0 0 0.5em 0;
+			font-size: 1.5em;
+			font-family: $alt-font-stack;
+		}
+
+		&__subtitle {
+			color: $alt-font-color-4;
+			font-size: 1.1em;
+			margin: 10px 0 0 0;
+			padding: 0;
+		}
+	}
+
+	&__container {
+
+		p {
+			margin: 0 0 15px 0;
+
+			&:last-child {
+				margin: 0;
+			}
+		}
+	}
+
+	&__action {
+		margin-top: -10px;
+		@include icon(16px, currentColor, 4px, 0);
+
+		.button {
+			margin: 0;
+		}
+	}
+
+	.github-buttons {
+		float: $right;
+		margin-top: 2px;
+	}
+}

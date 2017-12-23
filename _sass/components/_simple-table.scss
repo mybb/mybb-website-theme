@@ -1,0 +1,105 @@
+.simple-table {
+	background: $background-1;
+	// border: 1px solid $border-3;
+	border-radius: 6px;
+	padding: 12px 15px 15px 15px;
+	margin-bottom: 20px;
+
+    @include bp-medium {
+        display: table;
+		width: 95%;
+    }
+
+	&__heading {
+		padding-bottom: 10px;
+        border-bottom: solid 1px $border-1;
+
+        @include bp-medium {
+            display: table-cell;
+            width: 100px;
+            border-bottom: none;
+            border-right: solid 1px $border-1;
+			text-align: center;
+			vertical-align: top;
+            padding: 15px 15px 5px 0;
+
+            @include icon(36px, inherit, 0, 0);
+        }
+
+		&__title {
+			font-size: $font-regular;
+			color: $alt-font-color-2;
+		}
+
+		&__subtitle {
+			font-size: $font-small;
+			color: $alt-font-color-2;
+		}
+
+		img {
+			max-width: 80px;
+			max-height: 60px;
+		}
+	}
+
+	&__content {
+
+        @include bp-medium {
+            display: table-cell;
+            padding: 0 0 5px 20px;
+            vertical-align: top;
+        }
+
+		.platform-link {
+			padding: 2px 6px;
+			border: solid 1px $border-1;
+			border-radius: 4px;
+			font-size: 0.9em;
+			text-decoration: none;
+
+			@include icon(16px, $primary-color, 2px, 0);
+		}
+	}
+
+	@include bp-medium-max {
+
+		.simple-table__heading {
+			@include icon(20px, inherit, 10px, 0) {
+				display: inline-block;
+			}
+
+			&__subtitle {
+				display: inline-block;
+				margin: 0;
+				color: $alt-font-color-1;
+			}
+
+			.description {
+				color: $alt-font-color-2;
+			}
+		}
+	}
+
+    &.role {
+
+        &--management  {
+    		@include icon-fill(#00aa00);
+    	}
+
+        &--support {
+            @include icon-fill(#ff0000);
+        }
+
+    	&--development {
+    		@include icon-fill(#e34976);
+    	}
+
+    	&--quality-assurance {
+    		@include icon-fill(#880063);
+    	}
+
+    	&--community {
+    		@include icon-fill(#095c66);
+    	}
+    }
+}

@@ -1,0 +1,53 @@
+.logo {
+    $module: &;
+
+    display: block;
+    text-decoration: none;
+
+    &__icon {
+        > svg {
+            height: 40px;
+            width: 50px;
+            display: inline-block;
+            vertical-align: middle;
+            * {
+                transition: fill $transition-speed ease;
+            }
+        }
+    }
+
+    &__text {
+        font-family: $alt-font-stack;
+        font-style: italic;
+        color: $invert-font-color;
+        text-indent: 5px;
+    }
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &--light {
+        #{$module}__icon > svg * {
+            fill: $invert-font-color;
+        }
+
+        &:hover {
+            #{$module}__icon > svg * {
+                fill: $alt-font-color-3;
+            }
+        }
+    }
+
+    &--primary {
+        #{$module}__icon > svg * {
+            fill: $primary-color;
+        }
+
+        &:hover {
+            #{$module}__icon > svg * {
+                fill: $secondary-color;
+            }
+        }
+    }
+}

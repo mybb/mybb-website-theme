@@ -1,0 +1,112 @@
+.team-cards {
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+
+    .card {
+        background: $background-1;
+        border-radius: 5px;
+        box-sizing: border-box;
+        padding: 20px 45px;
+        margin-bottom: 15px;
+        text-align: center;
+        width: 100%;
+
+        @include bp-large {
+            width: 49%;
+        }
+
+        &__username {
+            text-align: center;
+            font-size: 1.4em;
+            font-weight: normal;
+            margin: 8px 0 18px 0;
+
+            &--has-name {
+                margin: 0;
+            }
+        }
+
+        &__name {
+            text-align: center;
+            font-size: 0.8em;
+            font-weight: normal;
+            color: $alt-font-color-2;
+            margin: 0 0 8px 0;
+        }
+
+        &__role {
+            text-align: center;
+            color: $alt-font-color-2;
+            margin: 0 0 15px 0;
+            font-size: 0.9em;
+
+            &__container {
+                padding: 2px 8px;
+                background: $background-default;
+                display: inline-block;
+                border-radius: 4px;
+                box-shadow: $border-3 0 0 3px;
+            }
+
+            @include icon(16px, $alt-font-color-2, 5px, 0);
+
+            &.card__role--management {
+                @include icon-fill(#00aa00);
+            }
+
+            &.card__role--support {
+                @include icon-fill(#ff0000);
+            }
+
+            &.card__role--development {
+                @include icon-fill(#e34976);
+            }
+
+            &.card__role--quality-assurance {
+                @include icon-fill(#880063);
+            }
+
+            &.card__role--community {
+                @include icon-fill(#095c66);
+            }
+        }
+
+        &__detail {
+            margin: 0;
+            font-size: 0.9em;
+            display: inline-block;
+
+            &__title {
+                @include visually-hidden;
+            }
+
+            &__link {
+                color: $alt-font-color-2;
+                background: none;
+                border: none;
+                margin: 0;
+                padding: 0;
+
+                @include icon(20px, $alt-font-color-2, 0, 0) {
+                    margin: 0 5px;
+                }
+
+                &:hover, &:active {
+                    @include icon-fill($secondary-color);
+                }
+            }
+
+            &__key {
+                display: none;
+            }
+        }
+    }
+}
+
+#powerTip .pgp_key {
+    margin: 0 2px;
+    font-family: monospace;
+}

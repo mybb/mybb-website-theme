@@ -1,0 +1,15 @@
+<nav class="section-menu section-menu--block">
+    <ul class="section-menu__links">
+    {% for item in site.data.[include.section] %}
+        {% assign item_url = item.url | prepend:"/" | append:"/" %}
+        {% assign parent_url = include.parent | prepend:"/" | append:"/" %}
+        {% for node in site.pages %}
+            {% if item_url == node.url %}
+            <li class="section-menu__links__item{% if item_url == page.url %} section-menu__links__item--active{% endif %}{% if item_url == parent_url %} section-menu__links__item--active{% endif %}">
+                <a href="{{ site.baseurl }}{{ item_url }}" class="section-menu__links__item__link">{% include icon.html icon=item.icon %}{{ item.title }}</a>
+            </li>
+            {% endif %}
+       {% endfor %}
+    {% endfor %}
+    </ul>
+</nav>

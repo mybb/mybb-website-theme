@@ -1,0 +1,124 @@
+.action-cards {
+	display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	flex-direction: row;
+
+	&__card {
+		width: 100%;
+		background: $background-default;
+		border-radius: $radius;
+		box-sizing: border-box;
+		position: relative;
+		margin-bottom: 30px;
+		box-shadow: $border-1 0 0 10px;
+		text-align: left;
+		transition: box-shadow $transition-speed ease;
+
+		&:hover {
+			box-shadow: $border-2 0 0 10px;
+		}
+
+		@include bp-medium {
+			width: 48%;
+		}
+
+		&__link {
+			display: block;
+			padding: 20px 20px 60px 80px;
+
+			@include links {
+				text-decoration: none;
+				color: none;
+				transition: color $transition-speed ease;
+			}
+		}
+
+		&__icon {
+			@include icon(40px, $alt-font-color-2, 0, 0);
+			float: left;
+			margin-left: -60px;
+
+			@include bp-large {
+				@include icon(70px, $alt-font-color-2, 0, 0);
+				float: none;
+				margin: 0;
+			}
+		}
+
+		&__title {
+			font-size: $font-regular;
+			color: $alt-font-color-1;
+			margin: 0;
+
+			@include bp-large {
+				margin-top: 30px;
+			}
+		}
+
+		&__description {
+			font-size: $font-smallest;
+			line-height: 1.5;
+			color: $alt-font-color-2;
+			margin: 10px 0 0 0;
+			text-align: left;
+		}
+
+		&__action {
+			position: absolute;
+			bottom: 0;
+			margin: 0 -20px 0 -80px;
+			width: 100%;
+			background: $background-1;
+			text-align: left;
+			font-size: $font-smallest;
+			font-weight: bold;
+			border-radius: 0 0 $radius $radius;
+			padding: 10px 15px 10px 25px;
+			display: flex;
+			justify-content: space-between;
+			box-sizing: border-box;
+
+			@include icon(18px, $alt-font-color-2, 0, 0);
+
+			@include bp-large {
+				margin: 0 -25px;
+			}
+		}
+	}
+
+	&--three {
+
+		@include bp-medium {
+			.action-cards__card {
+				width: 100%;
+			}
+		}
+
+		@include bp-large {
+			.action-cards__card {
+				width: 31.5%;
+				text-align: center;
+
+				&__link {
+					padding: 35px 25px 70px 25px;
+				}
+			}
+		}
+	}
+
+	&--four {
+
+		@include bp-large {
+
+			.action-cards__card {
+				width: 23.5%;
+				text-align: center;
+
+				&__link {
+					padding: 35px 25px 70px 25px;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,6 @@
+<{{ include.element }} href="{% if include.url %}{{ include.url }}{% else %}{{ site.baseurl }}/{% endif %}" class="logo logo--{{ include.style }} {% if include.type == "icon" %}logo--icon{% endif %} header__title__logo">
+    <span class="logo__icon">{% include logo-knockout.svg %}</span>
+    {% unless include.type == "icon" %}
+        <span class="logo__text">{{ site.name }}</span>
+    {% endunless %}
+</{{ include.element }}>

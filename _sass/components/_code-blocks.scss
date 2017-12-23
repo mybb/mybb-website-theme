@@ -1,0 +1,18 @@
+pre {
+    padding: 4px 6px;
+    background: $background-2;
+    border-radius: $radius;
+    font-family: monospace;
+
+    code {
+        padding: 0;
+    }
+}
+
+code {
+    padding: 0 6px;
+    background: $background-2;
+    border-radius: $radius;
+    font-family: monospace;
+    display: inline-block;
+}
