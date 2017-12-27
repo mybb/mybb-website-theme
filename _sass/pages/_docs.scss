@@ -94,20 +94,28 @@ article.docs {
 	}
 
 	.jump {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
 
 		&__tile {
-			width: 30%;
-			margin-right: 1.5%;
-			margin-left: 1.5%;
-			float: left;
+			width: 100%;
 			box-sizing: border-box;
 			background: $background-2;
 			text-align: center;
 			border-radius: 4px;
 			margin-bottom: 25px;
 
-			@include icon(48px, $primary-color, 0, 0) {
-				margin-bottom: 10px;
+			@include bp-medium {
+				width: 47%;
+			}
+
+			@include bp-large {
+				width: 30%;
+			}
+
+			@include icon(48px, $primary-color, auto, auto) {
+				margin-bottom: 20px;
 			}
 
 			&__link {
