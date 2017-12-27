@@ -107,15 +107,16 @@ article.docs {
 			margin-bottom: 25px;
 
 			@include bp-medium {
-				width: 47%;
+				width: 48.5%;
 			}
 
 			@include bp-large {
-				width: 30%;
+				width: 31.5%;
 			}
 
 			@include icon(48px, $primary-color, auto, auto) {
 				margin-bottom: 20px;
+				display: block;
 			}
 
 			&__link {
