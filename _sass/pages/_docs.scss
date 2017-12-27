@@ -1,6 +1,50 @@
-article.docs {
+.docs-jump {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
 
-	.page {
+	&__tile {
+		width: 100%;
+		box-sizing: border-box;
+		background: $background-2;
+		text-align: center;
+		border-radius: 4px;
+		margin-bottom: 25px;
+
+		@include bp-medium {
+			width: 48.5%;
+		}
+
+		@include bp-large {
+			width: 31.5%;
+		}
+
+		@include icon(48px, $primary-color, auto, auto) {
+			margin-bottom: 20px;
+			display: block;
+		}
+
+		&__link {
+			text-decoration: none;
+			padding: 40px 20px;
+			display: block;
+		}
+
+		&__title {
+			font-size: 1.5em;
+		}
+	}
+}
+
+.main.main--docs-page {
+	padding: 30px 0;
+
+	.main-feature {
+		background: $background-2;
+
+	}
+
+	.page-content {
 
 		h1 {
 			font-size: 1.5em;
@@ -95,44 +139,6 @@ article.docs {
 		}
 	}
 
-	.jump {
-		display: flex;
-		flex-wrap: wrap;
-		justify-content: space-between;
-
-		&__tile {
-			width: 100%;
-			box-sizing: border-box;
-			background: $background-2;
-			text-align: center;
-			border-radius: 4px;
-			margin-bottom: 25px;
-
-			@include bp-medium {
-				width: 48.5%;
-			}
-
-			@include bp-large {
-				width: 31.5%;
-			}
-
-			@include icon(48px, $primary-color, auto, auto) {
-				margin-bottom: 20px;
-				display: block;
-			}
-
-			&__link {
-				text-decoration: none;
-				padding: 40px 20px;
-				display: block;
-			}
-
-			&__title {
-				font-size: 1.5em;
-			}
-		}
-	}
-
 	.category-list {
 		list-style: none;
 		margin: 0;
@@ -177,6 +183,16 @@ article.docs {
 		&__heading {
 			font-size: 2em;
 			color: black;
+		}
+	}
+}
+
+.js {
+
+	.main.main--docs-page {
+
+		.main-feature .wrapper {
+			padding-top: 100px;
 		}
 	}
 }
