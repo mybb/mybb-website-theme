@@ -30,6 +30,11 @@
 				text-decoration: none;
 				padding: 40px 20px;
 				display: block;
+
+				&:hover,
+				&:active {
+					@include icon-fill($secondary-color);
+				}
 			}
 
 			&__title {
