@@ -50,16 +50,40 @@
 	.main-feature {
 		background: $background-2;
 		margin-bottom: 40px;
+
+		&__parent {
+
+			&__link {
+
+				@include icon(16px, $alt-font-color-1, 0, 5px););
+
+				&:link,
+				&:visited {
+					color: $alt-font-color-1;
+				}
+
+				&:hover,
+				&:active {
+					text-decoration: none;
+
+					@include icon-fill($secondary-color);
+				}
+			}
+		}
 	}
 
 	.page-content {
 
 		h1 {
-			font-size: 1.5em;
+			font-size: 1.6em;
+			font-family: $alt-font-stack;
+			font-weight: 600;
 		}
 
 		h2 {
 			font-size: 1.3em;
+			font-family: $alt-font-stack;
+			font-weight: 600;
 		}
 
 		h3 {
@@ -72,29 +96,22 @@
 
 		img {
 		    max-width: 34em;
-		    border: 5px solid #eee;
+		    border: 5px solid $background-2;
+			border-radius: $radius;
 		}
 	}
 
 	table {
-	    border: 1px solid #DFDFDF;
+	    border: 1px solid $border-1;
 	    border-radius: 6px 6px 6px 6px;
 	    margin: 10px;
 	    border-spacing: 0px;
 	}
 
 	td {
-	    border-top: 1px solid #DFDFDF;
+	    border-top: 1px solid $border-1;
 	    padding: 5px 5px 5px 5px;
 	}
-
-	// code {
-	//     display: inline-block;
-	//     border: 1px solid #DFDFDF;
-	//     padding: 3px;
-	//     border-radius: 4px 4px 4px 4px;
-	//     background: #F7F8FC;
-	// }
 
 	.toc {
 	    border: 1px solid $border-1;
