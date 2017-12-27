@@ -77,52 +77,48 @@ article.docs {
 
 	.edit-page {
 		margin-top: 30px;
-		border-top: 1px solid #ddd;
+		border-top: 1px solid $border-1;
 		padding-top: 15px;
 
-		.fa {
-			margin-right: 10px;
-		}
+		@include icon(16px, $alt-font-color-1, 10px, 0);
 
 		.edit-page-link {
-			color: #666;
+			color: $alt-font-color-1;
 			text-decoration: none;
-			// border-radius: 4px;
 			padding: 5px 10px;
-			// display: inline-block;
-			// border: 1px solid #ccc;
 
 			&:hover, &:active {
-				color: #ff7500;
+				color: $secondary-color;
 			}
 		}
 	}
 
-	.jump__tile {
-		width: 30%;
-		margin-right: 1.5%;
-		margin-left: 1.5%;
-		float: left;
-		box-sizing: border-box;
-		background: #f1f1f1;
-		text-align: center;
-		border-radius: 4px;
-		margin-bottom: 25px;
+	.jump {
 
-		.jump__tile__icon {
-			display: block;
-			font-size: 48px;
-			margin-bottom: 10px;
-		}
+		&__tile {
+			width: 30%;
+			margin-right: 1.5%;
+			margin-left: 1.5%;
+			float: left;
+			box-sizing: border-box;
+			background: $background-2;
+			text-align: center;
+			border-radius: 4px;
+			margin-bottom: 25px;
 
-		.jump__tile__link {
-			text-decoration: none;
-			padding: 40px 20px;
-			display: block;
-		}
+			@include icon(48px, $primary-color, 0, 0) {
+				margin-bottom: 10px;
+			}
 
-		.jump__tile__title {
-			font-size: 1.5em;
+			&__link {
+				text-decoration: none;
+				padding: 40px 20px;
+				display: block;
+			}
+
+			&__title {
+				font-size: 1.5em;
+			}
 		}
 	}
 
@@ -131,25 +127,25 @@ article.docs {
 		margin: 0;
 		padding: 0;
 
-		.category-list__item {
+		&__item {
 			padding: 10px;
-			border-bottom: 1px solid #ddd;
+			border-bottom: 1px solid $border-1;
 
-			.category-list__item__link {
+			&__link {
 				display: block;
 				text-decoration: none;
 			}
 
-			.category-list__item__title {
+			&__title {
 				margin: 0;
 				font-size: 1.4em;
 				font-weight: normal;
 			}
 
-			.category-list__item__description {
+			&__description {
 				font-size: 0.9em;
 				margin: 0;
-				color: #666;
+				color: $alt-font-color-1;
 			}
 
 			&:last-child {
@@ -167,7 +163,7 @@ article.docs {
 		margin-right:20px;
 		margin-bottom:30px;
 
-		.eol-notice__heading {
+		&__heading {
 			font-size: 2em;
 			color: black;
 		}
