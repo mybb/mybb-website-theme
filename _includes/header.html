@@ -40,10 +40,10 @@
                     <li class="main-menu__links__item main-menu__links__item--extend">
                         <a href="https://community.mybb.com/mods.php" class="main-menu__links__item__link">Extend</a>
                     </li>
-                    <li class="main-menu__links__item main-menu__links__item--docs">
+                    <li class="main-menu__links__item main-menu__links__item--docs{% if page.section == "docs" or layout.section == "docs" %} main-menu__links__item--active{% endif %}">
                         <a href="https://docs.mybb.com/" class="main-menu__links__item__link">Docs</a>
                     </li>
-                    <li class="main-menu__links__item main-menu__links__item--blog">
+                    <li class="main-menu__links__item main-menu__links__item--blog{% if page.section == "blog" or layout.section == "blog" %} main-menu__links__item--active{% endif %}">
                         <a href="https://blog.mybb.com/" class="main-menu__links__item__link">Blog</a>
                     </li>
                     <li class="main-menu__links__item main-menu__links__item--search">
