@@ -57,7 +57,6 @@
 			&__link {
 				font-size: 1.3em;
 				font-family: $alt-font-stack;
-				@include icon(16px, $alt-font-color-2, 0, 5px);
 
 				&:link,
 				&:visited {
@@ -68,10 +67,10 @@
 				&:active {
 					text-decoration: none;
 					color: $secondary-color;
-
-					@include icon-fill($secondary-color);
 				}
 			}
+
+			@include icon(14px, $alt-font-color-2, 0, 5px);
 		}
 	}
 
