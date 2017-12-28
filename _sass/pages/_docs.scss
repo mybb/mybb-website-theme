@@ -116,10 +116,10 @@
 	}
 
 	.toc {
-	    background: $background-2;
+	    background: $background-1;
 	    border-radius: $radius;
 	    margin: 0 0 20px 0;
-	    padding: 15px;
+	    padding: 15px 20px;
 	  	width: auto;
 
 		@include bp-medium {
