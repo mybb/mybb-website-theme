@@ -57,11 +57,11 @@
 			&__link {
 				font-size: 1.3em;
 				font-family: $alt-font-stack;
-				@include icon(16px, $alt-font-color-1, 0, 5px);
+				@include icon(16px, $alt-font-color-2, 0, 5px);
 
 				&:link,
 				&:visited {
-					color: $alt-font-color-2;
+					color: $alt-font-color-1;
 				}
 
 				&:hover,
