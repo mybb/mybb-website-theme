@@ -77,23 +77,27 @@
 	.page-content {
 
 		h1 {
+			margin: 2em 0 0.5em 0;
 			font-size: 1.8em;
 			font-family: $alt-font-stack;
 			font-weight: 600;
 		}
 
 		h2 {
-			font-size: 1.5em;
+			margin: 1em 0 0.5em 0;
+			font-size: 1.6em;
 			font-family: $alt-font-stack;
 			font-weight: 600;
 		}
 
 		h3 {
-			font-size: 1.3em;
+			margin: 1em 0 0.5em 0;
+			font-size: 1.2em;
 		}
 
 		h4 {
-			font-size: 1.1em;
+			margin: 1em 0 0.5em 0;
+			font-size: 1em;
 		}
 
 		img {
