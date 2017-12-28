@@ -52,19 +52,22 @@
 		margin-bottom: 40px;
 
 		&__parent {
+			margin: 0 0 10px 0;
 
 			&__link {
-
+				font-size: 1.3em;
+				font-family: $alt-font-stack;
 				@include icon(16px, $alt-font-color-1, 0, 5px);
 
 				&:link,
 				&:visited {
-					color: $alt-font-color-1;
+					color: $alt-font-color-2;
 				}
 
 				&:hover,
 				&:active {
 					text-decoration: none;
+					color: $secondary-color;
 
 					@include icon-fill($secondary-color);
 				}
