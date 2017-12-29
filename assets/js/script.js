@@ -2,7 +2,7 @@ $('html').addClass('js');
 
 $(function() {
     // Tooltips
-    $(".card__detail__link").powerTip({
+    $(".card__detail__link, .blog-post__categories-tags__link").powerTip({
         placement: "s",
         mouseOnToPopup: true
     })
