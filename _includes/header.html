@@ -7,7 +7,16 @@
         {% if page.url == "/" %}
             {{ page.title }}
         {% else %}
-            {{ page.title }} - {{ site.name }}
+            {% case page.type %}
+                {% when 'year' %}
+                    Archives for {{ page.date | date:'%Y' }} - {{ site.name }}
+                {% when 'month' %}
+                    Archives for {{ page.date | date: "%B %Y" }} - {{ site.name }}
+                {% when 'day' %}
+                    Archives for {{ page.date | date: "%B %-d, %Y" }} - {{ site.name }}
+                {% else %}
+                    {{ page.title }} - {{ site.name }}
+            {% endcase %}
         {% endif %}
     </title>
     {% if page.meta_description %}
