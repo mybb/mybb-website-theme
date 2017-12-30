@@ -119,7 +119,13 @@
             margin: 0 20px 10px 0;
 
             &__link {
-                @include icon(18px, $alt-font-color-2, 4px, 0);
+                @include icon(18px, $primary-color, 4px, 0);
+
+                &:hover,
+                &:active {
+                    @include icon-fill($secondary-color);
+                    text-decoration: none;
+                }
             }
         }
     }

@@ -190,7 +190,13 @@
         &__link {
             font-size: $font-smallest;
 
-            @include icon(16px, $alt-font-color-2, 4px, 0);
+            @include icon(16px, $primary-color, 4px, 0);
+
+            &:hover,
+            &:active {
+                @include icon-fill($secondary-color);
+                text-decoration: none;
+            }
         }
     }
 }
