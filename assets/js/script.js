@@ -89,7 +89,7 @@ $(function() {
         owl.trigger('prev.owl.carousel');
     });
 
-    $('.feature-tour__screenshot__link').featherlight();
+    $('.feature-tour__screenshot__link, .blog-post__image-link').featherlight();
 });
 
 // Headroom
