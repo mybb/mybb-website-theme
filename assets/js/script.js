@@ -25,12 +25,16 @@ $(function() {
     });
 
     $(".main-menu__links__item--search__icon").click(function () {
-        $(".site-search").addClass("site-search--show");
+        $(".site-search").removeClass("site-search--hide").addClass("site-search--show");
         $(".site-search__field").focus();
     });
 
     $(".site-search__button--cancel").click(function () {
         $(".site-search").removeClass("site-search--show");
+
+        setTimeout(function(){
+           $(".site-search").addClass("site-search--hide");
+       }, 200);
     });
 
     // Feature tour menu button

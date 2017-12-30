@@ -25,7 +25,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=yes">
     <link href="https://fonts.googleapis.com/css?family=Asap:400,600,600i|Open+Sans:300,400,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ site.baseurl }}/assets/css/main.css">
-    {% include header_include.html %}
+    {% include layout/header_include.html %}
 </head>
 <body{% if page.section %} class="section section--{{ page.section }}"{% endif %}>
     <header class="header">
@@ -61,7 +61,7 @@
                     </li>
                 </ul>
             </nav>
-            <div class="site-search site-search--mobile-hide">
+            <div class="site-search site-search--mobile-hide site-search--hide">
                 <form method="get" action="https://www.google.com/search">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="{{ site.search_site }}">
 					<label for="qWidget">

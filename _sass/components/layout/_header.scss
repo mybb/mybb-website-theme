@@ -161,6 +161,11 @@
 
         &--show {
             transform: translateY(0%);
+            visibility: visible;
+        }
+
+        &--hide {
+            visibility: hidden;
         }
 
         input[type="text"].site-search__field {
