@@ -86,28 +86,33 @@ textarea {
     	padding: 0;
     }
 
-    @include bp-medium {
+    .page-content {
 
-        .page-content--sidebar {
-            float: $left;
-            width: 62%;
+        &--sidebar {
+
+            @include bp-medium {
+                float: $left;
+                width: 62%;
+            }
         }
 
-        .page-content--centered {
-            width: 60%;
-            float: none;
-            margin: auto auto;
+        &--centered {
+
+            @include bp-medium {
+                width: 60%;
+                float: none;
+                margin: auto auto;
+            }
         }
 
-        .page-content--menu {
-            float: $left;
-            width: 78%;
-        }
+        &--columns {
+            display: flex;
+            flex-direction: column;
 
-        .page-sidebar {
-            float: $right;
-            width: 35%;
-            margin-top: 0;
+            @include bp-medium {
+                flex-direction: row;
+                justify-content: space-between;
+            }
         }
     }
 
@@ -115,8 +120,13 @@ textarea {
         padding-bottom: 10px;
         font-size: 0.9em;
 
+        @include bp-medium {
+            float: $right;
+            width: 35%;
+            margin-top: 0;
+        }
+
         .block {
-            // border: 1px solid $border-3;
             background: $background-1;
             padding: 15px 20px;
             margin-bottom: 30px;
@@ -131,6 +141,13 @@ textarea {
                 font-family: $alt-font-stack;
                 font-weight: 600;
             }
+        }
+    }
+
+    .page-column {
+
+        @include bp-medium {
+            width: 48%;
         }
     }
 }
