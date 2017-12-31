@@ -86,7 +86,8 @@
 			@include icon(18px, $primary-color, 0, 0) {
 
 				* {
-					transition: fill $transition-speed ease;
+					transition: $transition-speed;
+  					transition-timing-function: ease;
 				}
 			}
 
