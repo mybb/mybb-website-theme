@@ -84,7 +84,10 @@
 			box-sizing: border-box;
 
 			@include icon(18px, $primary-color, 0, 0) {
-				transition: fill $transition-speed ease;
+
+				* {
+					transition: fill $transition-speed ease;
+				}
 			}
 
 			@include bp-large {
