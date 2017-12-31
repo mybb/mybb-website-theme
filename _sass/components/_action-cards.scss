@@ -17,6 +17,10 @@
 
 		&:hover {
 			box-shadow: $border-2 0 0 10px;
+
+			.action-cards__card__action {
+				@include icon-fill($secondary-color);
+			}
 		}
 
 		@include bp-medium {
@@ -79,7 +83,9 @@
 			justify-content: space-between;
 			box-sizing: border-box;
 
-			@include icon(18px, $alt-font-color-2, 0, 0);
+			@include icon(18px, $primary-color, 0, 0) {
+				transition: fill $transition-speed ease;
+			}
 
 			@include bp-large {
 				margin: 0 -25px;
