@@ -65,7 +65,6 @@
         &__item {
             $module: &;
             flex-grow: 1;
-            transition: background $transition-speed ease;
 
             @include bp-medium-max {
                 width: 100%;
@@ -84,6 +83,7 @@
                 display: flex;
                 align-items: center;
                 justify-content: center;
+                transition: background $transition-speed ease;
 
                 @include bp-medium-max {
                     text-align: left;
