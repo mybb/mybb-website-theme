@@ -33,9 +33,11 @@
             <h1 class="header__title">
                 {% include logo.html element="a" style="light" %}
             </h1>
-            <span class="menu-button"><span class="icon">{% include icon.html icon='bars' %}</span></span>
-            <span class="menu-close-button menu-close-button--hide"><span class="icon">{% include icon.html icon='times-circle' %}</span></span>
-            <nav class="main-menu main-menu--mobile-hide">
+            <label class="menu-button" for="show-mobile-menu"><span class="icon">{% include icon.html icon='bars' %}</span></label>
+            <label class="menu-close-button menu-close-button--hide" for="show-mobile-menu"><span class="icon">{% include icon.html icon='times-circle' %}</span></label>
+            <input type="checkbox" class="header__checkbox" id="show-mobile-menu">
+            <input type="checkbox" class="header__checkbox" id="show-site-search">
+            <nav class="main-menu">
                 <ul class="main-menu__links">
                     <li class="main-menu__links__gap">&nbsp;</li>
                     <li class="main-menu__links__item main-menu__links__item--home{% if page.section == "home" or layout.section == "home" %} main-menu__links__item--active{% endif %}">
@@ -57,18 +59,18 @@
                         <a href="https://blog.mybb.com/" class="main-menu__links__item__link">Blog</a>
                     </li>
                     <li class="main-menu__links__item main-menu__links__item--search">
-                        <span class="main-menu__links__item__icon main-menu__links__item--search__icon">{% include icon.html icon='search' %}</span>
+                        <label class="main-menu__links__item__icon main-menu__links__item--search__icon" for="show-site-search">{% include icon.html icon='search' %}</label>
                     </li>
                 </ul>
             </nav>
-            <div class="site-search site-search--mobile-hide site-search--hide">
+            <div class="site-search">
                 <form method="get" action="https://www.google.com/search">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="{{ site.search_site }}">
 					<label for="qWidget">
 						<input name="q" id="qWidget" type="text" class="site-search__field" placeholder="{{ site.search_field_placeholder }}" />
 					</label>
                     <button class="button site-search__button site-search__button--search" id="submit" type="submit">{% include icon.html icon='search' %} Search</button>
-                    <span class="button button--dark site-search__button site-search__button--cancel">{% include icon.html icon='times' %} Cancel</span>
+                    <label class="button button--dark site-search__button site-search__button--cancel" for="show-site-search">{% include icon.html icon='times' %} Cancel</label>
 				</form>
             </div>
         </div>
