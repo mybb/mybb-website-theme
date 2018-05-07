@@ -18,11 +18,6 @@
             width: 49%;
         }
 
-        &__anchor {
-            color: inherit;
-            text-decoration: none;
-        }
-
         &__username {
             text-align: center;
             font-size: 1.4em;
@@ -81,6 +76,11 @@
             }
         }
     }
+}
+
+a.team-cards__card__anchor {
+    color: inherit;
+    text-decoration: none;
 }
 
 #powerTip .pgp_key {
