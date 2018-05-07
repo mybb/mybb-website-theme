@@ -1,0 +1,65 @@
+.team-role {
+    display: inline-block;
+    margin: 6px 2px;
+    padding: 0 8px;
+    border: solid 1px #AAA;
+    border-radius: 2px;
+    font-size: 11px;
+    font-weight: 400;
+    color: #767676;
+    text-transform: uppercase;
+
+    &.team-role--lead {
+        color: #FFF;
+    }
+
+    &:not(.team-role--lead) {
+        background-color: transparent;
+    }
+}
+
+.team-role--management {
+    color: #00aa00;
+    background-color: #00aa00;
+    border-color: #00aa00;
+}
+.team-role--development {
+    color: #e34976;
+    background-color: #e34976;
+    border-color: #e34976;
+}
+.team-role--design {
+    color: #a5c12c;
+    background-color: #a5c12c;
+    border-color: #a5c12c;
+}
+.team-role--security {
+    color: #927878;
+    background-color: #927878;
+    border-color: #927878;
+}
+.team-role--devops {
+    color: #8967de;
+    background-color: #8967de;
+    border-color: #8967de;
+}
+.team-role--support {
+    color: #f35858;
+    background-color: #f35858;
+    border-color: #f35858;
+}
+.team-role--community {
+    color: #2bb7c7;
+    background-color: #2bb7c7;
+    border-color: #2bb7c7;
+}
+.team-role--web {
+    color: #2ba4eb;
+    background-color: #2ba4eb;
+    border-color: #2ba4eb;
+}
+.team-role--editorial {
+    color: #62c9a1;
+    background-color: #62c9a1;
+    border-color: #62c9a1;
+}

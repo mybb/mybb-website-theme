@@ -18,6 +18,11 @@
             width: 49%;
         }
 
+        &__anchor {
+            color: inherit;
+            text-decoration: none;
+        }
+
         &__username {
             text-align: center;
             font-size: 1.4em;
@@ -37,40 +42,12 @@
             margin: 0 0 8px 0;
         }
 
-        &__role {
+        &__roles {
+            margin-bottom: 15px;
             text-align: center;
-            color: $alt-font-color-2;
-            margin: 0 0 15px 0;
-            font-size: 0.9em;
 
-            &__container {
-                padding: 2px 8px;
-                background: $background-default;
-                display: inline-block;
-                border-radius: 4px;
-                box-shadow: $border-3 0 0 3px;
-            }
-
-            @include icon(16px, $alt-font-color-2, 5px, 0);
-
-            &.card__role--management {
-                @include icon-fill(#00aa00);
-            }
-
-            &.card__role--support {
-                @include icon-fill(#ff0000);
-            }
-
-            &.card__role--development {
-                @include icon-fill(#e34976);
-            }
-
-            &.card__role--quality-assurance {
-                @include icon-fill(#880063);
-            }
-
-            &.card__role--community {
-                @include icon-fill(#095c66);
+            .team-role {
+                margin: 0 2px;
             }
         }
 
@@ -110,3 +87,4 @@
     margin: 0 2px;
     font-family: monospace;
 }
+
