@@ -141,6 +141,11 @@ textarea {
                 font-family: $alt-font-stack;
                 font-weight: 600;
             }
+
+            &.block--basic {
+                background: transparent;
+                border: solid 2px #f7f7f7;
+            }
         }
     }
 

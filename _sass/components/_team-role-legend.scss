@@ -1,0 +1,30 @@
+.team-role-legend {
+    &__role {
+        margin: 0 -20px;
+        padding: 12px 20px;
+        border-bottom: solid 2px #f7f7f7;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:target {
+            background: #ffffdd;
+        }
+
+        .team-role {
+            margin-top: 5px;
+        }
+
+        &__description {
+            text-align: justify;
+        }
+
+        &__code {
+            margin-right: 4px;
+            font-size: 0.8em;
+            font-weight: 300;
+            color: #767676;
+        }
+    }
+}
