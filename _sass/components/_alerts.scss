@@ -1,0 +1,88 @@
+.alert {
+    background-color: $background-1;
+    padding: side-values(10px 12px);
+    margin-top: 10px;
+    margin-bottom: 20px;
+    font-size: 0.9em;
+    border-radius: 4px;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+
+    &__message {
+        margin: 0;
+        padding: 0;
+        flex-grow: 1;
+    }
+
+    &__icon {
+        color: $alt-font-color-1;
+        margin-top: 5px;
+        margin-#{$right}: 12px;
+    }
+
+    &__dismiss {
+        float: $right;
+        font-size: 16px;
+
+        &__link {
+
+            &:link,
+            &:visited {
+                color: $danger-color;
+            }
+
+            &:hover {
+                color: $alt-font-color-1;
+            }
+        }
+    }
+
+    &__title {
+        font-size: 1em;
+        margin: 0;
+    }
+
+    &__description {
+        margin: 0;
+    }
+
+    &__list {
+        margin: 10px 0;
+    }
+
+    &--danger {
+        background-color: $danger-color;
+        color: $invert-font-color;
+
+        :link,
+        :visited,
+        .alert__icon {
+            color: $invert-font-color;
+        }
+    }
+
+    &--success {
+        background-color: $success-color;
+        color: $invert-font-color;
+
+        :link,
+        :visited,
+        .alert__icon {
+            color: $invert-font-color;
+        }
+    }
+
+    &--no-results {
+        background: none;
+        text-align: center;
+        padding: 30px;
+        font-size: 1.2em;
+        color: $alt-font-color-1;
+        margin: 0;
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+    }
+}
