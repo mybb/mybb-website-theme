@@ -1,100 +1,320 @@
-input[type="text"],
-input[type="url"],
-input[type="number"],
-input[type="email"],
-input[type="password"] {
+.field {
+
+    &__name {
+        margin: side-values(0 0 5px 0);
+        padding: 0;
+        font-size: 1em;
+    }
+
+    &__description {
+        font-size: 0.8em;
+        line-height: 1.4;
+        color: $alt-font-color-1;
+        margin: side-values(-4px 0 4px 0);
+
+        &--below {
+            margin-top: 8px;
+        }
+    }
+
+    &__value {
+        margin: 0;
+        font-size: 0.9em;
+    }
+
+    &__block {
+        margin-top: 5px;
+    }
+
+    label {
+        cursor: pointer;
+    }
+}
+
+.option-field {
+    padding: side-values(0 0 0 30px);
+    margin-bottom: 20px;
+
+    &:last-child,
+    &--single {
+        margin-bottom: 0;
+    }
+
+    &__input,
+    input[type="radio"],
+    input[type="checkbox"] {
+        float: $left;
+        margin: side-values(6px 0 0 -26px);
+    }
+
+    &__name {
+        font-size: 1em;
+        margin: 0;
+
+        &--inline {
+            display: inline-block;
+        }
+    }
+
+    &__description {
+        @extend .field__description;
+        margin-top: 1px;
+
+        &--inline {
+            display: inline-block;
+            margin-#{$left}: 3px;
+        }
+    }
+
+    &__field {
+
+    }
+
+    label {
+        cursor: pointer;
+    }
+
+    &--compact {
+        font-size: 0.9em;
+        margin: 8px 0;
+        padding: side-values(0 0 0 30px);
+
+        .option-field__input,
+        input[type="checkbox"],
+        input[type="radio"] {
+            float: $left;
+            margin: side-values(4px 0 0 -26px);
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+}
+
+.textbox {
     border: 1px solid $border-2;
-    padding: 6px;
+    padding: 5px 6px;
     width: 100%;
-    font-size: 0.9em;
+    // font-size: 0.9em;
+    font-size: 16px;
     outline: 0;
     border-radius: 4px;
     box-sizing: border-box;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    &--short {
+        width: 60px;
+        font: 12px $font-stack;
+    }
+
+    &--small {
+        width: 60px;
+        margin-#{$right}: 6px;
+    }
+
+    &--medium {
+        width: 100px;
+        margin-#{$right}: 6px;
+    }
+
+    &--large {
+        width: 250px;
+        margin-#{$right}: 6px;
+    }
+
+    &--subject {
+        font-size: 1.4em;
+    }
 }
 
 select {
-    border: 1px solid $border-2;
-    padding: 4px;
-    font-size: 0.9em;
-    outline: none;
-    max-width: 100%;
-    border-radius: 4px;
-    box-sizing: border-box;
 
     &[multiple="multiple"] {
         width: 100%;
         height: 200px;
+        border: 1px solid $border-2;
+        border-radius: $radius;
+
+        &:focus {
+            outline: none;
+        }
     }
 }
 
+.select-field {
+    padding: 0;
+    margin: 0;
+    border: 1px solid $border-2;
+    width: auto;
+    display: inline-block;
+    border-radius: $radius;
+    overflow: hidden;
+    background-color: $background-default;
+    position: relative;
+
+    select {
+        padding: side-values(5px 30px 5px 8px);
+        border: none;
+        box-shadow: none;
+        background-color: transparent;
+        background-image: none;
+        -webkit-appearance: none;
+           -moz-appearance: none;
+                appearance: none;
+        position: relative;
+        z-index: 100;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__icon {
+        #{$right}: 8px;
+        top: 9px;
+        position: absolute;
+        z-index: 1;
+        color: $alt-font-color-2;
+        font-size: 14px;
+    }
+}
+
+// registration error/success colors
 input {
 
-    &.short {
-        width: 50px;
-        font: 12px $font-stack;
+    &.error {
+        border-color: $danger-color;
     }
 
-    &.small {
-        width: 50px;
-        margin-#{$left}: 6px;
-        margin-#{$right}: 6px;
+    &.valid {
+        border-color: $success-color;
     }
+}
+
+// registration form error message
+label.error {
+	color: $danger-color;
+	font-size: 0.8em;
+	padding: 3px 0 0 0;
+	display: block;
 }
 
 textarea {
     border: 1px solid $border-2;
     padding: 6px;
     width: 100%;
-    font-size: 0.9em;
+    // font-size: 0.9em;
+    font-size: 16px;
     outline: 0;
     border-radius: 4px;
     box-sizing: border-box;
 }
 
+.file-wrapper {
+    background: $background-1;
+    padding: 12px;
+    border-radius: $radius;
+    margin-bottom: 5px;
+}
+
+.confirm-field {
+
+    @include bp-medium {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+
+    &__field {
+        margin-bottom: 8px;
+
+        @include bp-medium {
+            width: 49%;
+            margin-bottom: 0;
+        }
+    }
+}
+
 .segmented-control {
-    margin: side-values(5px 0 0 0);
     border: 1px solid $border-2;
     font-size: 0.8em;
     display: inline-block;
     border-radius: 4px;
+    vertical-align: top;
+
+    &--block:before {
+        content: "\A";
+    }
 
     &__option {
         display: inline-block;
         float: $left;
+    }
 
-        &__button {
-            display: block;
-            padding: 3px 8px;
-            margin: 0;
-            border-#{$left}: 1px solid $border-2;
-            border-#{$right}: 1px solid transparent;
-            position: relative;
-            z-index: 10;
-            cursor: pointer;
-        }
+    &__button {
+        display: block;
+        padding: 7px 8px;
+        margin: 0;
+        border-#{$left}: 1px solid $border-2;
+        border-#{$right}: 1px solid transparent;
+        position: relative;
+        z-index: 10;
+        cursor: pointer;
+    }
 
-        &__input {
-            position: absolute;
-            visibility: hidden;
+    &__input {
+        position: absolute;
+        visibility: hidden;
 
-            &:checked + .segmented-control__option__button {
-                background: $primary-color;
-                color: $invert-font-color;
-                margin: -1px;
-                padding: 3px 9px;
-                border: 1px solid $primary-color;
-                z-index: 15;
-            }
+        &:checked + .segmented-control__button {
+            background: $primary-color;
+            color: $invert-font-color;
+            margin: -1px;
+            padding: 7px 9px;
+            border: 1px solid $primary-color;
+            z-index: 15;
         }
     }
 
-    :first-child .segmented-control__option__button {
+    :first-child .segmented-control__button {
         border-#{$left}: 1px solid transparent;
-        border-radius: corner-values(4px 0 0 4px);
+        border-radius: corner-values($radius 0 0 $radius);
     }
 
-    :last-child .segmented-control__option__button {
-        border-radius: corner-values(0 4px 4px 0);
+    :last-child .segmented-control__button {
+        border-radius: corner-values(0 $radius $radius 0);
+    }
+
+    &--buttons {
+        border: none;
+        margin-bottom: -4px;
+
+        .segmented-control__button {
+            background: $background-1;
+        }
+
+        .segmented-control__button,
+        .segmented-control__input:checked + .segmented-control__button,
+        :first-child .segmented-control__button,
+        :last-child .segmented-control__button
+        {
+            border: none;
+            border-radius: $radius;
+            padding: 7px 8px;
+            margin: side-values(0 4px 4px 0);
+        }
+    }
+
+    &--alt {
+
+        .segmented-control__input:checked + .segmented-control__button {
+            background-color: $background-4;
+            border-color: $background-4;
+            color: $font-color;
+        }
     }
 }
 
@@ -105,31 +325,52 @@ textarea {
         display: block;
         margin: side-values(0 0 5px 0);
         padding: 0;
+    }
 
-        &__button {
-            display: block;
-            padding: 3px 8px;
-            margin: side-values(5px 10px 0 0);
-            background: $background-1;
-            cursor: pointer;
-            border-radius: 4px;
+    &__button {
+        display: block;
+        padding: 3px 8px;
+        margin: side-values(5px 10px 0 0);
+        background: $background-1;
+        cursor: pointer;
+        border-radius: 4px;
+
+        &.icon:before {
+            @include black-transparency(0.4);
+        }
+    }
+
+    &__input {
+        position: absolute;
+        visibility: hidden;
+
+        &:checked + .select-control__button {
+            background: $background-4;
 
             &.icon:before {
-                @include black-transparency(0.4);
+                @include black-transparency(0.6);
             }
         }
+    }
+}
 
-        &__input {
-            position: absolute;
-            visibility: hidden;
+.date-field {
+    display: flex;
+    flex-direction: row;
+    background: $background-1;
+    padding: 12px;
+    border-radius: $radius;
 
-            &:checked + .select-control__option__button {
-                background: $background-4;
+    &__item {
+        margin-right: 8px;
+    }
 
-                &.icon:before {
-                    @include black-transparency(0.6);
-                }
-            }
-        }
+    &__name {
+        display: block;
+        font-weight: normal;
+        font-size: 0.9em;
+        color: $alt-font-color-1;
+        margin: side-values(0 0 3px 0);
+        padding: 0;
     }
 }

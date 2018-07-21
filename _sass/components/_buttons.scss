@@ -1,75 +1,138 @@
-.button,
-a.button {
-    color: $invert-font-color;
-    background: $primary-color;
-    border: 1px solid $primary-color;
-    padding: 4px 10px;
-    margin: 5px;
-    font-size: 0.9em;
-    text-decoration: none;
-    display: inline-block;
-    line-height: 26px;
-    border-radius: 4px;
+@mixin button-theme(
+    $color, // background color
+    $color-text: $invert-font-color, // text color
+    $color-border: $color, // border color
+    $color-hover: $secondary-color, // hover background color
+    $color-text-hover: $invert-font-color, // hover text color
+    $color-border-hover: $color-hover) { // hover border color
 
+    @content;
+
+    &,
     &:link,
     &:visited {
-        color: $invert-font-color;
+        color: $color-text;
+        background-color: $color;
+        border-color: $color-border;
     }
 
-    &:hover,
-    &:active {
-        background: $secondary-color;
-        border-color: $secondary-color;
+    &:hover {
+        color: $color-text-hover;
+        background-color: $color-hover;
+        border-color: $color-border-hover;
+    }
+}
+
+.button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 5px;
+    padding: 4px 10px;
+    font-size: 0.9em;
+    line-height: 26px;
+    border: 1px solid;
+    border-radius: 4px;
+    -webkit-appearance: none;
+       -moz-appearance: none;
+            appearance: none;
+
+    &:hover {
         text-decoration: none;
+        outline: none;
         cursor: pointer;
     }
 
-    &.button--secondary {
-        border: 1px solid $border-1;
-        background: $background-default;
-        color: $primary-color;
+    @include button-theme($primary-color);
 
-        &:link,
-        &:visited {
-            color: $primary-color;
-        }
+    &__icon {
+        margin-#{$right}: 8px;
 
-        &:hover,
-        &:active {
-            color: $secondary-color;
+        &.button__icon--after {
+            margin-#{$right}: 0;
+            margin-#{$left}: 8px;
         }
     }
 
-    &.button--primary-border {
-        border-color: $primary-color;
+    $theme-secondary: (
+        'color': $background-default,
+        'color-text': $primary-color,
+        'color-border': $border-1,
+        'color-hover': $background-default,
+        'color-text-hover': $secondary-color,
+        'color-border-hover': $border-1
+    );
+
+    &--secondary {
+        @include button-theme($theme-secondary...);
     }
 
-    &.button--default-background-border {
-        border-color: $background-default;
-        box-shadow: $border-1 0 0 3px;
+    $theme-invert: (
+        'color': $background-default,
+        'color-text': $primary-color,
+        'color-border': $background-default,
+        'color-hover': $background-default,
+        'color-text-hover': $secondary-color,
+        'color-border-hover': $background-default
+    );
+
+    &--invert {
+        @include button-theme($theme-invert...);
     }
 
-    &.button--invert {
-        background: $secondary-color;
-        border-color: $secondary-color;
+    $theme-danger: (
+        'color': $background-default,
+        'color-text': $danger-color,
+        'color-border': $border-1,
+        'color-hover': $danger-color
+    );
 
-        &:hover,
-        &:active {
-            background-color: $secondary-color-dark;
-            border-color: $secondary-color-dark;
+    &--danger {
+        @include button-theme($theme-danger...);
+    }
+
+    $theme-success: (
+        'color': $background-default,
+        'color-text': $success-color,
+        'color-border': $border-1,
+        'color-hover': $success-color
+    );
+
+    &--success {
+        @include button-theme($theme-success...);
+    }
+
+    $theme-basic: (
+        'color': transparent,
+        'color-text': $alt-font-color-1,
+        'color-border': transparent,
+        'color-hover': transparent,
+        'color-text-hover': $secondary-color
+    );
+
+    &--basic {
+        @include button-theme($theme-basic...) {
+            padding: 4px 4px;
         }
+    }
+
+    &--inline {
+        padding: 3px 10px;
+        font-size: 0.9em;
+        margin: side-values(0 0 0 5px);
+        vertical-align: top;
     }
 
     @include bp-medium-max {
 
-        &.button--full-width {
+        &--full-width {
             padding: 8px 10px;
             width: 100%;
             margin: 5px 0;
             box-sizing: border-box;
         }
 
-        &.button--half-width {
+        &--half-width {
             padding: 8px 10px;
             width: 49%;
             float: $left;
@@ -87,68 +150,24 @@ a.button {
         }
     }
 
-    &.button--danger {
-        background: none;
-        color: $danger-color;
-        border-color: $border-1;
-
-        &:hover {
-            background: $danger-color;
-            border-color: $danger-color;
-            color: $invert-font-color;
-        }
+    &--small {
+        padding: 0 8px;
+        font-size: 0.9em;
+        margin: side-values(0 5px 0 0);
+        vertical-align: top;
     }
 
-    &.button--success {
-        background: none;
-        color: $success-color;
-        border-color: $border-1;
-
-        &:hover {
-            background: $success-color;
-            border-color: $success-color;
-            color: $invert-font-color;
-        }
+    &--medium {
+        font-size: 1em;
+		padding: 6px 12px;
     }
 
-    @include icon(16px, $invert-font-color, 6px);
-
-	&.button--secondary {
-		@include icon-fill($primary-color);
-
-		&:hover, &:active {
-			@include icon-fill($secondary-color);
-		}
-	}
-
-	&.button--medium {
-		font-size: 1.2em;
+    &--big {
+        font-size: 1.1em;
 		padding: 8px 16px;
 
-        @include icon-size(24px);
-	}
-
-	&.button--big {
-		font-size: 1.3em;
-		padding: 12px 18px;
-
-        @include icon-size(24px);
-	}
-
-	&.button--dark {
-		background: $dark-background-1;
-		border-color: $dark-border-3;
-
-		&:hover {
-			border-color: $dark-border-2;
-		}
-	}
-
-    &.button--no-margin {
-        margin: 0;
-    }
-
-    &:hover, &:active {
-        outline: none;
+        .button__icon {
+            margin-#{$right}: 12px;
+        }
     }
 }

@@ -1,0 +1,29 @@
+.row {
+    line-height: 1.4;
+    padding: 10px 12px;
+    border-bottom: 1px solid $border-1;
+
+    &--form {
+        padding: 12px 8px;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: 0;
+            padding-bottom: 6px;
+        }
+    }
+
+    &--no-border {
+        border-bottom: none;
+    }
+
+    &--simple-columns {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+}
