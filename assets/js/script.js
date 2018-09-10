@@ -24,6 +24,7 @@ $(function() {
         var target = $(this.getAttribute('href'));
         if( target.length ) {
             event.preventDefault();
+            history.replaceState({}, "", this.hash);
             $('html, body').stop().animate({
                 scrollTop: target.offset().top
             }, 500);
