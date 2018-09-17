@@ -161,17 +161,17 @@
     }
 
     &--medium {
-        font-size: 1em;
+        font-size: 1.2em;
 		padding: 6px 12px;
         @include icon-size(24px);
     }
 
     &--big {
-        font-size: 1.1em;
-		padding: 8px 16px;
+        font-size: 1.3em;
+		padding: 12px 18px;
         @include icon-size(24px);
 
-        .button__icon {
+        .icon {
             margin-#{$right}: 12px;
         }
     }
