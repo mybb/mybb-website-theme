@@ -14,12 +14,14 @@
         color: $color-text;
         background-color: $color;
         border-color: $color-border;
+        @include icon-fill($color-text);
     }
 
     &:hover {
         color: $color-text-hover;
         background-color: $color-hover;
         border-color: $color-border-hover;
+        @include icon-fill($color-text-hover);
     }
 }
 
@@ -43,15 +45,29 @@
         cursor: pointer;
     }
 
+    @include icon(16px, $invert-font-color, 8px);
     @include button-theme($primary-color);
 
-    &__icon {
-        margin-#{$right}: 8px;
+    // &__icon {
+    //     margin-#{$right}: 8px;
+    //
+    //     &.button__icon--after {
+    //         margin-#{$right}: 0;
+    //         margin-#{$left}: 8px;
+    //     }
+    // }
 
-        &.button__icon--after {
-            margin-#{$right}: 0;
-            margin-#{$left}: 8px;
-        }
+    $theme-invert: (
+        'color': $secondary-color,
+        'color-text': $invert-font-color,
+        'color-border': $secondary-color,
+        'color-hover': $secondary-color-dark,
+        'color-text-hover': $invert-font-color,
+        'color-border-hover': $secondary-color-dark
+    );
+
+    &--invert {
+        @include button-theme($theme-invert...);
     }
 
     $theme-secondary: (
