@@ -66,6 +66,9 @@ $(function() {
 // Headroom
 var myElement = document.querySelector("header");
 // construct an instance of Headroom, passing the element
-var headroom  = new Headroom(myElement);
+var headroom  = new Headroom(myElement, {
+    "offset": 75
+    }    
+);
 // initialise
 headroom.init();
