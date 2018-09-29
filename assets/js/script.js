@@ -21,13 +21,20 @@ $(function() {
     });
 
     $('a[href^="#"]').on('click', function(event) {
-        var target = $(this.getAttribute('href'));
-        if( target.length ) {
+        var targetIdentifier = '#' + $.escapeSelector(this.hash.slice(1));
+
+        var $target = $(targetIdentifier);
+
+        if($target.length) {
             event.preventDefault();
+
             history.replaceState({}, "", this.hash);
+
             $('html, body').stop().animate({
-                scrollTop: target.offset().top
+                scrollTop: $target.offset().top
             }, 500);
+
+            location.href = targetIdentifier;
         }
     });
 
