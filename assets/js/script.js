@@ -21,9 +21,7 @@ $(function() {
     });
 
     $('a[href^="#"]').on('click', function(event) {
-        var targetIdentifier = '#' + $.escapeSelector(this.hash.slice(1));
-
-        var $target = $(targetIdentifier);
+        var $target = $('#' + $.escapeSelector(this.hash.slice(1)));
 
         if($target.length) {
             event.preventDefault();
@@ -34,7 +32,7 @@ $(function() {
                 scrollTop: $target.offset().top
             }, 500);
 
-            location.href = targetIdentifier;
+            location.href = '#' + this.hash.slice(1);
         }
     });
 
