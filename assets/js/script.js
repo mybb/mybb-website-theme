@@ -28,9 +28,16 @@ $(function() {
 
             history.replaceState({}, "", this.hash);
 
+            $(headroom.elem).hide();
+
             $('html, body').stop().animate({
                 scrollTop: $target.offset().top
-            }, 500);
+            }, 500, function () {
+                setTimeout(function () {
+                    headroom.unpin();
+                    $(headroom.elem).show();
+                }, 100);
+            });
 
             location.href = '#' + this.hash.slice(1);
         }
@@ -77,3 +84,7 @@ var headroom  = new Headroom(myElement, {
 );
 // initialise
 headroom.init();
+
+if (window.location.hash) {
+    headroom.unpin();
+}
