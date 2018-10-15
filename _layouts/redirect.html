@@ -2,8 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 	<head>
 		<meta content="text/html; charset=UTF-8" http-equiv="content-type" />
-		<meta http-equiv="refresh" content="0; url={{ content }}">
-		<link rel="canonical" href="{{ content }}" />
+		<meta http-equiv="refresh" content="0; url={{ page.redirect.to | default: content }}">
+		<link rel="canonical" href="{{ page.redirect.to | default: content }}" />
 		<title>Redirecting</title>
 	</head>
 	<body>
