@@ -183,6 +183,28 @@
         }
     }
 
+    &__signatures {
+        margin-top: 20px;
+
+        &__type {
+            margin: 0;
+            font-size: $font-smallest;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        &__value {
+            padding: 4px 8px;
+            height: 150px;
+            background: $background-1;
+            border: none;
+            border-radius: $radius;
+            font-family: monospace;
+            font-size: $font-smallest;
+            overflow-y: auto;
+        }
+    }
+
     &__verifying-note {
         margin-bottom: 30px;
         text-align: center;
