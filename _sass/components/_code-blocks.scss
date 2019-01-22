@@ -1,4 +1,4 @@
-pre {
+pre, pre.highlight {
     padding: 4px 6px;
     background: $background-2;
     border-radius: $radius;
@@ -6,6 +6,7 @@ pre {
 
     code {
         padding: 0;
+        display: unset;
     }
 }
 
@@ -14,7 +15,7 @@ code {
     background: $background-2;
     border-radius: $radius;
     font-family: monospace;
-    display: inline-block;
     word-wrap: break-word;
+    white-space: pre-wrap;
     max-width: 100%;
 }
