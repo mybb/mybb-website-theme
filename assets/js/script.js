@@ -1,5 +1,34 @@
 $('html').addClass('js');
 
+function recursiveList(items, parentSuffix = '/')
+{
+    let output = '<ul>';
+    let recursiveCount = 0;
+
+    for (let item of items) {
+        output += '<li>';
+
+        if (typeof item == 'object') {
+            for (let key in item) {
+                output += key + parentSuffix;
+
+                let call = recursiveList(item[key]);
+                output += call[0];
+                recursiveCount += call[1];
+            }
+        } else {
+            recursiveCount++;
+            output += item;
+        }
+
+        output += '</li>';
+    }
+
+    output += '</ul>';
+
+    return [output, recursiveCount];
+}
+
 $(function() {
     // Tooltips
     $(".card__detail__link, .blog-post__categories-tags__link").powerTip({
@@ -73,6 +102,16 @@ $(function() {
     });
 
     $('.feature-tour__screenshot__link, .blog-post__image-link').featherlight();
+
+    $('[data-recursivelist]').each(function() {
+        let id = $(this).attr('data-recursivelist');
+
+        let content, count;
+        [content, count] = recursiveList(JSON.parse($(this).text()));
+
+        $('[data-recursivelist-content="' + id + '"]').html(content);
+        $('[data-recursivelist-count="' + id + '"]').html(count);
+    });
 });
 
 // Headroom
