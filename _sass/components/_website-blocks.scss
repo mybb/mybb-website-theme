@@ -40,6 +40,30 @@
 	// 	}
 	// }
 
+	&--symbol {
+		display: table;
+		width: 95%;
+	}
+
+	&__icon {
+		display: table-cell;
+		padding: 14px 30px 0 0;
+		width: 50px;
+
+		svg {
+			max-height: 40px;
+
+			* {
+				fill: #ccc;
+			}
+		}
+	}
+
+	&__content {
+		display: table-cell;
+		vertical-align: top;
+	}
+
 	&__heading {
 		margin-bottom: 10px;
 
