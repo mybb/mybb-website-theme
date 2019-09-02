@@ -83,17 +83,24 @@
 		}
 
 		h2 {
+			margin: 1.5em 0 0.5em 0;
 			font-size: 1.6em;
 			font-family: $alt-font-stack;
 			font-weight: 600;
 		}
 
 		h3 {
+			margin: 1.5em 0 0.5em 0;
 			font-size: 1.2em;
 		}
 
 		h4 {
+			margin: 1.5em 0 0 0;
 			font-size: 1em;
+		}
+
+		h1 + h2, h2 + h3 {
+			margin-top: 0;
 		}
 
 		img {
@@ -124,15 +131,20 @@
 
 		@include bp-medium {
 			margin: 0 0 20px 20px;
+			max-width: 40%;
 			float: right;
+		}
+
+		&:empty {
+			display: none;
 		}
 
 		h3 {
 			margin: 0 0 5px 0;
 		}
 
-		&:empty {
-			display: none;
+		& > ol {
+			font-size: 0.9em;
 		}
 	}
 
@@ -142,10 +154,6 @@
 	  &:hover {
 		  text-decoration: underline;
 	  }
-	}
-
-	.top-level-header {
-	  display:inline;
 	}
 
 	.back-to-top {
@@ -188,8 +196,8 @@
 			}
 
 			&__title {
-				margin: 0;
-				font-size: 1.6em;
+				margin: 0.5em 0;
+				font-size: 1.2em;
 				font-weight: normal;
 			}
 
