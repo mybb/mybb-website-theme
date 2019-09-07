@@ -111,15 +111,19 @@
 	}
 
 	table {
-	    border: 1px solid $border-1;
-	    border-radius: 6px 6px 6px 6px;
-	    margin: 10px;
-	    border-spacing: 0px;
+		margin: 10px 0;
+		width: 100%;
+		border-spacing: 0px;
+		border-collapse: collapse;
 	}
 
-	td {
-	    border-top: 1px solid $border-1;
-	    padding: 5px 5px 5px 5px;
+	td, th {
+		padding: 6px 13px;
+		border: 1px solid $border-1;
+	}
+
+	th {
+		background: $background-1;
 	}
 
 	.toc {
