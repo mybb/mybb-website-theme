@@ -41,13 +41,12 @@
 	// }
 
 	&--symbol {
-		display: table;
-		width: 95%;
+		display: grid;
+		grid-template-columns: 70px auto;
 	}
 
 	&__icon {
-		display: table-cell;
-		padding: 14px 30px 0 0;
+		grid-column: 1;
 		width: 50px;
 
 		svg {
@@ -60,7 +59,8 @@
 	}
 
 	&__content {
-		display: table-cell;
+		grid-column: 2;
+		padding-top: 7px;
 		vertical-align: top;
 	}
 
@@ -70,7 +70,6 @@
 		&__title {
 			color: $font-color;
 			font-weight: 600;
-			margin-bottom: 2px;
 			padding: 0;
 			margin: 0 0 0.5em 0;
 			font-size: 1.5em;
@@ -96,8 +95,20 @@
 		}
 	}
 
+ 	& > h3, &__content > h3 {
+		font-size: 1.1em;
+		margin: 1.5em 0 0 0;
+	}
+
+ 	& > h3 + p, &__content > h3 + p {
+		margin-top: 0.5em;
+	}
+
+	& > ul li {
+		margin: 0.5em 0;
+	}
+
 	&__action {
-		margin-top: -10px;
 		@include icon(16px, currentColor, 4px, 0);
 
 		.button {

@@ -16,6 +16,7 @@ code {
     border-radius: $radius;
     font-family: monospace;
     word-wrap: break-word;
+    word-break: break-word;
     white-space: pre-wrap;
     max-width: 100%;
 }
