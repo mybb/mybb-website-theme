@@ -180,6 +180,7 @@
             border-radius: $radius;
             font-family: monospace;
             font-size: $font-smallest;
+            user-select: all;
         }
     }
 
