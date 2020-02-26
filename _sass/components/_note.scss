@@ -6,9 +6,11 @@
     border-radius: $radius;
     border-left: 4px solid $border-1;
 
-    @include icon(24px, $alt-font-color-2, 12px, -36px) {
-        float: left;
-        margin-top: 16px;
+    & > {
+        @include icon(24px, $alt-font-color-2, 12px, -36px) {
+            float: left;
+            margin-top: 16px;
+        }
     }
 
     &__buttons {
