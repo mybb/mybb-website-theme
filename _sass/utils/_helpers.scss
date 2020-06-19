@@ -5,3 +5,7 @@
 .visually-hidden {
     @include visually-hidden;
 }
+
+.nowrap {
+    white-space: nowrap;
+}
