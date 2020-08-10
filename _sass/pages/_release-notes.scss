@@ -309,7 +309,7 @@
             font-weight: normal;
         }
 
-        &__reporter {
+        &__details {
             margin: 0;
             font-size: $font-smallest;
             color: $alt-font-color-2;
@@ -320,6 +320,26 @@
                 }
             }
 
+            code {
+                padding: 0;
+                background: none;
+            }
+
+            &__item:not(:first-child) {
+                margin-left: 1px;
+            }
+
+            &__item:not(:last-child) {
+                margin-right: 1px;
+            }
+
+            &__item:not(:last-child)::after {
+				margin-left: 4px;
+                content: '·';
+            }
+        }
+
+        &__reporter {
             &__affiliation {
 
                 &:before {
