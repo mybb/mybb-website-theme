@@ -98,6 +98,7 @@
     }
 
     &__details {
+        display: inline-block;
         margin: 20px 0 10px 0;
 
         &__item {
@@ -110,6 +111,22 @@
             text-transform: uppercase;
             color: $alt-font-color-1;
         }
+    }
+
+    &__read-more {
+        @include icon(18px, $primary-color, 0, 4px);
+
+        &:hover,
+        &:active {
+            @include icon-fill($secondary-color);
+            text-decoration: none;
+        }
+    }
+}
+
+.support {
+    .wrapper {
+        border-top: 1px solid $border-1;
     }
 
     &__actions {
@@ -130,7 +147,6 @@
         }
     }
 }
-
 
 .social-buttons {
     display: flex;
