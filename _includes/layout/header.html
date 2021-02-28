@@ -67,7 +67,7 @@
                 <form method="get" action="https://www.google.com/search">
 					<input type="hidden" name="as_sitesearch" id="as_sitesearch" value="{{ site.search_site }}">
 					<label for="qWidget">
-						<input name="q" id="qWidget" type="text" class="site-search__field" placeholder="{{ site.search_field_placeholder }}" />
+						<input name="q" id="qWidget" type="text" class="site-search__field textbox" placeholder="{{ site.search_field_placeholder }}" />
 					</label>
                     <button class="button site-search__button site-search__button--search" id="submit" type="submit">{% include icon.html icon='search' %} Search</button>
                     <label class="button button--dark site-search__button site-search__button--cancel" for="show-site-search">{% include icon.html icon='times' %} Cancel</label>
