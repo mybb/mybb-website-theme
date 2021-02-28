@@ -109,8 +109,16 @@ $(function() {
         let content, count;
         [content, count] = recursiveList(JSON.parse($(this).text()));
 
-        $('[data-recursivelist-content="' + id + '"]').html(content);
-        $('[data-recursivelist-count="' + id + '"]').html(count);
+        $('[data-recursivelist-content="' + $.escapeSelector(id) + '"]').html(content);
+        $('[data-recursivelist-count="' + $.escapeSelector(id) + '"]').html(count);
+    });
+
+    $('[data-common-toggle]').on('toggle', function(e) {
+        e.preventDefault();
+
+        let $siblings = $('[data-common-toggle="' + $.escapeSelector($(this).attr('data-common-toggle')) + '"]');
+
+        $siblings.attr('open', e.currentTarget.open);
     });
 });
 

@@ -24,7 +24,7 @@
         border-bottom: 1px solid $border-1;
 
         &__code {
-            color: $alt-font-color-1;
+            color: $alt-font-color-3;
             display: inline-block;
             margin: 0 15px 0 0;
         }
@@ -166,6 +166,12 @@
 
     &__checksums {
         margin-top: 20px;
+
+        details summary {
+            margin-bottom: 10px;
+            font-size: $font-smallest;
+            color: $alt-font-color-1;
+        }
 
         &__type {
             margin: 0;
