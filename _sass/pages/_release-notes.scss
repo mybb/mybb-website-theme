@@ -331,6 +331,10 @@
                 background: none;
             }
 
+            &__item {
+                white-space: nowrap;
+            }
+
             &__item:not(:first-child) {
                 margin-left: 1px;
             }
