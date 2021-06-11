@@ -1,5 +1,7 @@
 pre, pre.highlight {
     padding: 4px 6px;
+    max-height: 350px;
+    overflow: auto;
     background: $background-2;
     border-radius: $radius;
     font-family: monospace;
