@@ -120,6 +120,16 @@ $(function() {
 
         $siblings.attr('open', e.currentTarget.open);
     });
+
+    document.querySelectorAll('[data-copy-value]').forEach(function ($e) {
+        $e.addEventListener('click', () => {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(
+                    $e.getAttribute('data-copy-value')
+                );
+            }
+        });
+    });
 });
 
 // Headroom
