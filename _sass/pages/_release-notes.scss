@@ -315,6 +315,28 @@
             font-weight: normal;
         }
 
+        &__reference {
+            margin-left: 2px;
+            padding: 2px 4px;
+            background-color: $background-1;
+            border-radius: $radius;
+            font-size: $font-smallest;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $alt-font-color-1;
+            white-space: nowrap;
+
+            &:hover,
+            &:active {
+                text-decoration: underline;
+                color: $primary-color;
+            }
+
+            &[data-type="advisory"] {
+                background-color: color-mix(in lch, $primary-color 5%, transparent);
+            }
+        }
+
         &__details {
             margin: 0;
             font-size: $font-smallest;
