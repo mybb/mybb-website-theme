@@ -47,6 +47,38 @@
 .main.main--docs-page {
 	padding: 30px 0;
 
+	.branch-switch {
+		display: flex;
+		gap: 0.3em;
+		align-items: center;
+		justify-content: end;
+		margin-top: -30px;
+		margin-bottom: 20px;
+		margin-left: auto;
+		padding: 0.5em;
+		width: fit-content;
+
+		&__title {
+			margin: 0 8px;
+			font-size: 0.8em;
+			color: $alt-font-color-2;
+		}
+
+		a {
+			padding: 0.3em 0.9em;
+			border: 1px solid $border-2;
+			border-radius: $radius;
+			color: $alt-font-color-1;
+			text-decoration: none;
+
+			&.active {
+				background: $dark-background-4;
+				border-color: transparent;
+				color: $invert-font-color;
+			}
+		}
+	}
+
 	.main-feature {
 		background: $background-2;
 		margin-bottom: 40px;
