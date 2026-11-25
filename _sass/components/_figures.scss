@@ -1,0 +1,35 @@
+.figure {
+	padding: 1em;
+	border: 1px solid $border-1;
+	border-radius: $radius;
+	text-align: center;
+
+	&__image {
+		margin: 2em 0;
+		max-width: 100%;
+		border: 1px solid $border-1;
+
+		&--checkerboard {
+			--tile-color-1: #{$background-default};
+			--tile-color-2: #{$background-3};
+			--tile-size: 20px;
+
+			&--dark {
+				--tile-color-1: #{$dark-background-1};
+				--tile-color-2: #{$dark-background-2};
+			}
+
+			background-color: var(--tile-color-1);
+			background-image:
+				linear-gradient(45deg, var(--tile-color-2) 25%, transparent 25%, transparent 75%, var(--tile-color-2) 75%),
+				linear-gradient(45deg, var(--tile-color-2) 25%, transparent 25%, transparent 75%, var(--tile-color-2) 75%);
+			background-size: var(--tile-size) var(--tile-size);
+			background-position: 0 0, calc(var(--tile-size) / 2) calc(var(--tile-size) / 2);
+		}
+	}
+
+	&__note {
+		font-size: 0.9em;
+		color: $alt-font-color-1;
+	}
+}
