@@ -21,4 +21,22 @@ code {
     word-wrap: break-word;
     white-space: pre-wrap;
     max-width: 100%;
+
+    &[data-color] {
+        white-space: nowrap;
+        user-select: all;
+
+        @supports (x: #{'attr(x type(<color>))'}) {
+            &::before {
+                display: inline-block;
+                height: 0.75em;
+                aspect-ratio: 1 / 1;
+                vertical-align: middle;
+                margin-right: 4px;
+                background-color: #{'attr(data-color type(<color>))'};
+                border-radius: 50%;
+                content: "";
+            }
+        }
+    }
 }
